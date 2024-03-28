@@ -7,26 +7,22 @@ public class Student
 
          
         public string name {get; private set;}
-        public string mobileAppId {get; private set;}
 
                                                                                                                                               
-        public Student()
+        public Student(int id = 0, int age = 0, string name = "#####")
         {
-            this.id       = 0;
-            this.age      = 0;
+            this.id       = id;
+            this.age      = age;
             
-            this.name     = "#####";
-            mobileAppId = RestWebClient.mobileAppId;
+            this.name     = name;
         }
 
         public Dictionary<string, string> SerializeStudent()
         {
             Dictionary<string, string> serializedStudent = new Dictionary<string, string>();
 
-            serializedStudent.Add("id", this.id.ToString());
             serializedStudent.Add("age", this.age.ToString());
             serializedStudent.Add("name", this.name);
-            serializedStudent.Add("mobile_app_id", this.mobileAppId);
 
             return serializedStudent;
         }

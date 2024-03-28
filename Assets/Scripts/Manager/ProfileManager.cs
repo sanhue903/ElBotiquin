@@ -4,61 +4,84 @@ using TMPro;
 using UnityEngine;
 using System.Collections.Generic;
 using RestClient.Core.Singletons;
-using System.Data.Common;
-using System.IO;
 using System;
-
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 public class ProfileManager : Singleton<ProfileManager>
 {
-    List<Student> profiles;
-
     public void Awake()
     {
-        profiles = new List<Student>();
         var EProfilesValues = Enum.GetValues(typeof(EProfiles));
 
         foreach (EProfiles slot in EProfilesValues)
         {
-            profiles.Add(SaveSystem.Load(slot));
+            SaveSystem.Load((int)slot);
         }
     }
 
-    public void CreateStudentProfile(TMP_InputField name, TMP_InputField age, EProfiles slot)
+    public void LoadStudentProfile(int slot)
     {
-        RequestHeader header = new RequestHeader {
-            Key = "Content-Type",
-            Value = "application/json"
-        };  
+        Student student = SaveSystem.Load(slot);
 
-        
+        //TODO ver como cambiar los botones para crear y cargar estudiantes
+        if (student.id == 0)
+        {
+            return;
+        }
+    }                                                                                       
+    public void CreateStudentProfile(int slot, TMP_InputField age, TMP_InputField name)
+    {
         if (!Enum.IsDefined(typeof(EProfiles), slot))
         {
             Debug.LogError("Invalid slot");
             return;
         }
  
-        Student student = profiles[(int)slot];
+        Student student = new Student();
 
-        Dictionary<string, string> serialiazedStudent = student.SerializeStudent();
+        var serialiazedStudent = student.SerializeStudent();
+        
         serialiazedStudent["name"] = name.text;
         serialiazedStudent["age"] = age.text; 
-        //TODO dict to JSON
-        StartCoroutine(RestWebClient.Instance.HttpPost($"{RestWebClient.baseUrl}/apps/BOTIKI/aules/{AuleManager.auleCode}/students", JsonUtility.ToJson(student), (r, slot) => OnStudentRequestComplete(r), new List<RequestHeader> { header } ));
+        
+        var studentJson = JsonConvert.SerializeObject(serialiazedStudent);
+        
+        RequestHeader header = new RequestHeader {
+            Key = "Content-Type",
+            Value = "application/json"
+        };  
+        
+
+        StartCoroutine(RestWebClient.Instance.HttpPost($"{RestWebClient.baseUrl}/apps/BOTIKI/aules/{AuleManager.auleCode}/students", 
+            studentJson, (r) => OnStudentRequestComplete(r, slot), new List<RequestHeader> { header } ));
     }
 
-//TODO Cambiar todo
     private void OnStudentRequestComplete(Response response, int slot)
     {
         Debug.Log($"Status Code: {response.StatusCode}");
 
         if (response.StatusCode == 201)
         {
-            //TODO sistema de slot de guardado(cambiar boton de crear a cargar)
+            JObject data = JObject.Parse(response.Data);
 
+            int id = (int)data["student"]["id"];   
+            string name = (string)data["student"]["name"];
+            int age = (int)data["student"]["age"];
+
+
+            SaveSystem.Save(slot, id:id, age:age, name:name);
+
+            
             UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
             return;
         }
 
-        //TODO mensajes de error
+        if (response.StatusCode == 404)
+        {
+            //auleErrorText.GetComponent<TextMeshProUGUI>().text = "Aula no encontrada";
+            //auleErrorText.SetActive(true);
+
+            return;
+        }
     }     
 }
