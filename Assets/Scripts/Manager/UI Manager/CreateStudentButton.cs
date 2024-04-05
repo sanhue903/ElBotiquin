@@ -1,8 +1,7 @@
-using System;    
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-
+using System;
 
 public class CreateStudentButton : MonoBehaviour
 {
@@ -24,21 +23,28 @@ public class CreateStudentButton : MonoBehaviour
 
     void Update()
     {
-        string name = nameForm.text;
-        string age = ageForm.text;
-
-        if (age.Length == 0 || name.Length == 0)
+        if (ageForm.text.Length == 0)
         {
             button.interactable = false;
             return;
         }
-        //eliminar espacios en blanco
-        name.Replace("\u200B", string.Empty);
+        
         button.interactable = true;
     }
 
     void OnEnable()
     {
-        button.onClick.AddListener(() => ProfileManager.Instance.CreateStudentProfile(slot, ageForm, nameForm));
+        if (button == null)
+        {
+            button = GetComponent<Button>();
+        }
+        
+        int age = int.Parse(ageForm.text);
+        string name = nameForm.text;
+        name = name.Replace("\u200B", string.Empty);
+
+
+        button.onClick.AddListener(() => UIManager.Instance.CreateStudentProfile(slot, age, name));
     }
+
 }

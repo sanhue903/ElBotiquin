@@ -7,6 +7,8 @@ public class Student
 
          
         public string name {get; private set;}
+        public int lastCompletedChapter {get; set;}
+        
 
                                                                                                                                               
         public Student(int id = 0, int age = 0, string name = "#####")
@@ -15,6 +17,7 @@ public class Student
             this.age      = age;
             
             this.name     = name;
+            this.lastCompletedChapter = 0;
         }
 
         public Dictionary<string, string> SerializeStudent()
@@ -26,4 +29,4 @@ public class Student
 
             return serializedStudent;
         }
-    }
+    } 
