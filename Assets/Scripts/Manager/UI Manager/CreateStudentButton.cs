@@ -44,7 +44,7 @@ public class CreateStudentButton : MonoBehaviour
         name = name.Replace("\u200B", string.Empty);
 
 
-        button.onClick.AddListener(() => UIManager.Instance.CreateStudentProfile(slot, age, name));
+        button.onClick.AddListener(() => LoginManager.Instance.CreateStudentProfile(slot, age, name));
     }
 
 }

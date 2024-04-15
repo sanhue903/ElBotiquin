@@ -31,12 +31,12 @@ public class APIManager : Singleton<APIManager>
     {
         int statusCode = (int)response.StatusCode;
 
-        if (statusCode == 200)
+        if (statusCode == 200)                                                                                                          
         {
             this.auleCode = auleCode;
         }
 
-        UIManager.Instance.ManageCodeMenu(statusCode);
+        LoginManager.Instance.ManageCodeMenu(statusCode);
     }
 
     public void CreateStudentProfile(int slot, int age, string name)
@@ -69,7 +69,7 @@ public class APIManager : Singleton<APIManager>
             SaveSystem.Create(slot, id:id, age:age, name:name);
         }
 
-        UIManager.Instance.ManageProfileMenu(statusCode);
+        LoginManager.Instance.ManageProfileMenu(statusCode);
     }
 
     

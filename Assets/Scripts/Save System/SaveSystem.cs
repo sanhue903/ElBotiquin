@@ -1,6 +1,7 @@
 using System.IO;
 using System;
 using UnityEngine;
+using Newtonsoft.Json;
 
 public static class SaveSystem
 {
@@ -15,20 +16,22 @@ public static class SaveSystem
         }
         
         string path = SAVE_FOLDER + "profile" + slot.ToString() + ".json";
-        Student created_student = new Student(id:id, age:age, name:name);
+        Student createdStudent = new Student(id:id, age:age, name:name);
 
-        File.WriteAllText(path, JsonUtility.ToJson(created_student));
+        var json = JsonConvert.SerializeObject(createdStudent);
+        Debug.Log(json);
+        File.WriteAllText(path, json);
     }
 
     public static void Save(int slot, int lastChapter)
     {
         
-        Student student = Load(slot);
+        Student saveStudent = Load(slot);
 
-        student.lastCompletedChapter = lastChapter;
+        saveStudent.lastCompletedChapter = lastChapter;
 
         string path = SAVE_FOLDER + "profile" + slot.ToString() + ".json";
-        File.WriteAllText(path, JsonUtility.ToJson(student));
+        File.WriteAllText(path, JsonConvert.SerializeObject(saveStudent));
     }
 
     public static Student Load(int slot)
@@ -40,8 +43,10 @@ public static class SaveSystem
             Create(slot);
         }
 
-        return JsonUtility.FromJson<Student>(File.ReadAllText(path));
-         
+        Student student = JsonConvert.DeserializeObject<Student>(File.ReadAllText(path));   
+
+        Debug.Log(student.lastCompletedChapter);
+        return student;
     }
 }
 

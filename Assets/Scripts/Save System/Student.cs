@@ -17,7 +17,7 @@ public class Student
             this.age      = age;
             
             this.name     = name;
-            this.lastCompletedChapter = 0;
+            this.lastCompletedChapter = 1;
         }
 
         public Dictionary<string, string> SerializeStudent()
