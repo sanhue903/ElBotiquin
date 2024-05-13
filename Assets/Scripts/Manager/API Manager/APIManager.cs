@@ -5,6 +5,7 @@ using RestClient.Core.Models;
 using RestClient.Core.Singletons;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using UnityEngine;
 
 public class APIManager : Singleton<APIManager>
 {
@@ -72,5 +73,9 @@ public class APIManager : Singleton<APIManager>
         LoginManager.Instance.ManageProfileMenu(statusCode);
     }
 
+    public void SendScores(List<Score> scores)
+    {
+           
+    }
     
 }
