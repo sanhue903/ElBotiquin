@@ -6,42 +6,9 @@ using TMPro;
 
 public class LoginManager : Singleton<LoginManager>
 {
-    [SerializeField] private GameObject codeMenu;
-    private TextMeshProUGUI auleErrorText;
     public static int lastChapter;
     public static bool online;
 
-    void Start()
-    {
-        auleErrorText = codeMenu.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
-    }
-
-    public void SendAuleCode(TextMeshProUGUI text)
-    {
-        string code = text.text;
-        code = code.Replace("\u200B", string.Empty);
-
-        APIManager.Instance.AuthAuleCode(code);
-    }
-
-    public void ManageCodeMenu(int statusCode)
-    {
-        switch (statusCode)
-        {
-            case 200:
-                codeMenu.SetActive(false);
-                auleErrorText.text = "";
-                break;
-            
-            case 404: 
-                auleErrorText.text = "Aula no encontrada";
-                break;
-
-            default:
-                auleErrorText.text = "Error de conexión";
-                break;
-        }
-    }
 
     public void CreateStudentProfile(int slot, int age, string name)
     {
@@ -60,14 +27,15 @@ public class LoginManager : Singleton<LoginManager>
         {
             case 201:
                 UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+                lastChapter = 1;
+                online = true;
                 break;
             
             case 404: 
-                codeMenu.SetActive(true);
+                AuleCodeManager.Instance.ShowCodeMenu();
                 break;
 
             default:
-                auleErrorText.text = "Error de conexión";
                 break;
         }
     }

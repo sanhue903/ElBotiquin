@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class GetScore : MonoBehaviour
 {
+    [SerializeField] private string idQuestion; 
     [SerializeField] private bool isCorrect;
     [SerializeField] private string answer;
     private Button button;
@@ -21,7 +22,7 @@ public class GetScore : MonoBehaviour
         button.onClick.AddListener(() => {
             Timer timer = Timer.Instance;
             Debug.Log("Time: " + timer.GetMilliseconds());
-            ScoreManager.Instance.AddScore(new Score(isCorrect, answer, timer.GetMilliseconds()));
+            ScoreManager.Instance.AddScore(new Score(idQuestion, isCorrect, answer, timer.GetMilliseconds()));
             timer.ResetTimer();
             }
         );

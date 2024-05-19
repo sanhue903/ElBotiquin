@@ -4,6 +4,7 @@ using System.Collections.Generic;
 public class ScoreManager : Singleton<ScoreManager>
 {
     private List<Score> scores;
+    [SerializeField] private string chapterId;
 
     void Start()
     {
@@ -16,6 +17,29 @@ public class ScoreManager : Singleton<ScoreManager>
 
     public void SendScores()
     {
-        APIManager.Instance.SendScores(scores);
+        if (LoginManager.online)
+        {
+            APIManager.Instance.SendScores(chapterId, scores);
+        }
+    }
+
+    public void ManageScoreMenu(int statusCode)
+    {
+        switch (statusCode)
+        {
+            case 201:
+                Debug.Log("Scores sent");
+                UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+                break;
+            
+            case 404: 
+                Debug.Log("Scores not sent");
+                AuleCodeManager.Instance.ShowCodeMenu();
+                break;
+
+            default:
+                Debug.Log("Error sending scores");
+                break;
+        }
     }
 }

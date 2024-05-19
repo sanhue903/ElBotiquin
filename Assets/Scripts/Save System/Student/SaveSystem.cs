@@ -1,5 +1,4 @@
 using System.IO;
-using System;
 using UnityEngine;
 using Newtonsoft.Json;
 
@@ -17,6 +16,7 @@ public static class SaveSystem
         
         string path = SAVE_FOLDER + "profile" + slot.ToString() + ".json";
         Student createdStudent = new Student(id:id, age:age, name:name);
+        APIManager.Instance.SetIdStudent(createdStudent.id);
 
         var json = JsonConvert.SerializeObject(createdStudent);
         Debug.Log(json);
@@ -44,8 +44,8 @@ public static class SaveSystem
         }
 
         Student student = JsonConvert.DeserializeObject<Student>(File.ReadAllText(path));   
+        APIManager.Instance.SetIdStudent(student.id);
 
-        Debug.Log(student.lastCompletedChapter);
         return student;
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine;
 public class ChangeParagraph : MonoBehaviour
 {
     [SerializeField] private GameObject[] paragraphs; 
+    [SerializeField] private string nextScene;
 
     public void ShowPreviousParagraph()
     {
@@ -46,10 +47,14 @@ public class ChangeParagraph : MonoBehaviour
             }
         }
 
-        if (actualParagraphIndex < paragraphs.Length - 1)
+        if (actualParagraphIndex < paragraphs.Length - 2)
         {
             paragraphs[actualParagraphIndex].SetActive(false);
             paragraphs[actualParagraphIndex + 1].SetActive(true);
+        }
+        else
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(nextScene);
         }
     }
 }

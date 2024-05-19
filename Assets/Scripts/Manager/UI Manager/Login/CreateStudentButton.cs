@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using System;
+
 
 public class CreateStudentButton : MonoBehaviour
 {
@@ -32,19 +32,20 @@ public class CreateStudentButton : MonoBehaviour
         button.interactable = true;
     }
 
-    void OnEnable()
+    void OnDisable()
     {
-        if (button == null)
-        {
-            button = GetComponent<Button>();
-        }
+        button.onClick.RemoveAllListeners();
+    }
+
+    public void SetCreateButton()
+    {
+        button.onClick.RemoveAllListeners();
         
         int age = int.Parse(ageForm.text);
+
         string name = nameForm.text;
         name = name.Replace("\u200B", string.Empty);
 
-
         button.onClick.AddListener(() => LoginManager.Instance.CreateStudentProfile(slot, age, name));
     }
-
 }
