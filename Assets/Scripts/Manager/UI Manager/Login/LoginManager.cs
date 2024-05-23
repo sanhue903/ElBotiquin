@@ -2,14 +2,25 @@
 using RestClient.Core.Singletons;
 using UnityEngine;
 using System;
-using TMPro;
 
 public class LoginManager : Singleton<LoginManager>
 {
     public static int lastChapter;
     public static bool online;
-
-
+    private static bool isCreated;
+     
+    void Awake()
+    {
+        if (!isCreated)
+        {
+            DontDestroyOnLoad(gameObject);
+            isCreated = true;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     public void CreateStudentProfile(int slot, int age, string name)
     {
         if (!Enum.IsDefined(typeof(EOnlineProfiles), slot))

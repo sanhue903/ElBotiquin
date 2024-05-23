@@ -6,6 +6,8 @@ namespace RestClient.Core.Singletons
         where T : Component
     {
         private static T _instance;
+        private static bool isCreated;
+
         public static T Instance
         {
             get

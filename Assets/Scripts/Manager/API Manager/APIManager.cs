@@ -13,6 +13,20 @@ public class APIManager : Singleton<APIManager>
     private string auleCode;
     private string appMobileId;
     private int actualIdStudent;
+    private static bool isCreated;
+      
+    void Awake()
+    {
+        if (!isCreated)
+        {
+            DontDestroyOnLoad(gameObject);
+            isCreated = true;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     void Start()
     {
         header = new RequestHeader {

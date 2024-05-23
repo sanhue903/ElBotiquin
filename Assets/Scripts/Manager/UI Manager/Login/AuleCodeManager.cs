@@ -20,6 +20,7 @@ public class AuleCodeManager : Singleton<AuleCodeManager>
     }
     public void ManageCodeMenu(int statusCode)
     {
+        Debug.Log(statusCode);
         switch (statusCode)
         {
             case 200:

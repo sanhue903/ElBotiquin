@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using RestClient.Core.Singletons;
 using UnityEngine;
 using Newtonsoft.Json.Linq;
