@@ -12,6 +12,11 @@ public class GetScore : MonoBehaviour
     {
         button = GetComponent<Button>();
     }
+
+    void SetAnswer(string answer)
+    {
+        this.answer = answer;
+    }
     void OnEnable()
     {
         if (button == null)
