@@ -22,13 +22,19 @@ EditorBuildSettings:
     guid: 5397bf5a62d999eb8b2650f1b5eafb13
   - enabled: 1
     path: Assets/Scenes/Chapter 3/Tale.unity
-    guid: 9189a143d7137dfb1b3d2b67a0316a30
+    guid: 6e98dbed03f75d84f9ceac6ed8d05a47
   - enabled: 1
     path: Assets/Scenes/Chapter 3/Activity 1/Activity.unity
     guid: 1dfc37f199a1ac94ca6bc65379557bb3
   - enabled: 1
     path: Assets/Scenes/Chapter 3/Activity 1/Congratulations.unity
     guid: 92e06fa17e95a5351959e30e8d26c930
+  - enabled: 1
+    path: Assets/Scenes/Chapter 3/Activity 2/Activity.unity
+    guid: 34ded5a16e8bb8e4fb519775331ba94d
+  - enabled: 1
+    path: Assets/Scenes/Chapter 3/Activity 2/Congratulations.unity
+    guid: ce236d7c47411884e9e110a22e541819
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: bd1a74122ff037f4fbfd563c5436093f, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 24976b64ff2f1a841ab6e1f0db6c7a5e, type: 2}

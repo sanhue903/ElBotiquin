@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 public class Score
     {
         private string idQuestion;

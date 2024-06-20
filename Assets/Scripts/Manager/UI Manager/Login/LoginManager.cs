@@ -5,10 +5,12 @@ using System;
 
 public class LoginManager : Singleton<LoginManager>
 {
-    public static int lastChapter;
-    public static bool online;
+    //Singleton
     private static bool isCreated;
-     
+
+    //API Settings
+    public static bool online;
+
     void Awake()
     {
         if (!isCreated)
@@ -21,15 +23,9 @@ public class LoginManager : Singleton<LoginManager>
             Destroy(gameObject);
         }
     }
-    public void CreateStudentProfile(int slot, int age, string name)
+    public void CreateStudentProfile(int age, string name)
     {
-        if (!Enum.IsDefined(typeof(EOnlineProfiles), slot))
-        {
-            Debug.LogError("Invalid slot");
-            return;
-        }
-
-        APIManager.Instance.CreateStudentProfile(slot, age, name);
+        APIManager.Instance.CreateStudentProfile(age, name);
     }
 
     public void ManageProfileMenu(int statusCode)
@@ -38,32 +34,19 @@ public class LoginManager : Singleton<LoginManager>
         {
             case 201:
                 UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
-                lastChapter = 1;
                 online = true;
                 break;
             
-            case 404: 
-                AuleCodeManager.Instance.ShowCodeMenu();
-                break;
-
             default:
+                Debug.LogError("Error creating profile");
+                ErrorManager.Instance.ShowError($"Error al crear el perfil    {statusCode}");
                 break;
         }
     }
 
-    public void LoadProfile(int slot)
+    public void LoadProfile(Student student)
     {
-        if (!Enum.IsDefined(typeof(EOnlineProfiles), slot) && slot != SaveSystem.offlineSlot)
-        {
-            Debug.LogError("Invalid slot");
-            return;
-        }
-
-        Student student = SaveSystem.Load(slot);
-
-        lastChapter = student.lastCompletedChapter;
-        online = (slot == SaveSystem.offlineSlot) ? true : false;
-
+        APIManager.Instance.actualStudent = student;
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
 }

@@ -6,14 +6,23 @@ using RestClient.Core.Singletons;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
+using Unity.VisualScripting.Antlr3.Runtime;
+using System.Net.Http.Headers;
 
 public class APIManager : Singleton<APIManager>
 {
-    private RequestHeader header;
-    private string auleCode;
-    private string appMobileId;
-    private int actualIdStudent;
+    //Singleton
     private static bool isCreated;
+
+    //Information
+    public Student actualStudent;
+    //private string auleCode;
+
+    //API Settings
+    private const string baseUrl = "http://127.0.0.1:5000";
+    private const string appId = "BOTIQI";
+    private const string token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcxODQ5MzU0NywianRpIjoiZWJmM2ZjOGYtZWJhOS00N2I4LWE4YTktNjIxYmZjOWVjODBmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IkJPVElRSSIsIm5iZiI6MTcxODQ5MzU0NywiY3NyZiI6ImVlYWIzZGRhLTNiNWQtNDNiNC1hYmYyLTAwMjVmMWFlNzEyNSJ9.7ThEnvU-FdAEU-EASz-wGCoArKqy9r8ImSc8CIm-AGw";
+    private List<RequestHeader> header;
       
     void Awake()
     {
@@ -29,16 +38,23 @@ public class APIManager : Singleton<APIManager>
     }
     void Start()
     {
-        header = new RequestHeader {
+        header = new List<RequestHeader>();
+        header.Add(new RequestHeader {
             Key = "Content-Type",
             Value = "application/json"
-        };  
-        appMobileId = "BOTIKI";
+        });
+
+        header.Add(new RequestHeader {
+            Key = "Authorization",
+            Value = "Bearer " + token
+        });
     }
     
+    // Aula no implementada en la api
+    /*
     public void AuthAuleCode(string auleCode)
     {
-        StartCoroutine(RestWebClient.Instance.HttpGet($"{RestWebClient.baseUrl}/apps/BOTIKI/aules/{auleCode}",
+        StartCoroutine(RestWebClient.Instance.HttpGet($"{RestWebClient.baseUrl}/apps/{appId}/aules/{auleCode}",
          (r) => OnAuthAuleCodeCompleted(r, auleCode)));
     }
 
@@ -53,24 +69,25 @@ public class APIManager : Singleton<APIManager>
 
         AuleCodeManager.Instance.ManageCodeMenu(statusCode);
     }
+    */
 
-    public void CreateStudentProfile(int slot, int age, string name)
+    public void CreateStudentProfile(int age, string name)
     {
-        Student student = new Student();
+        Debug.Log("Creating Student Profile");
 
-        var serialiazedStudent = student.SerializeStudent();
+        var json = JsonConvert.SerializeObject(new {age = age, name = name});
+
+        Debug.Log(json);
         
-        serialiazedStudent["name"] = name;
-        serialiazedStudent["age"] = age.ToString(); 
-        
-        var studentJson = JsonConvert.SerializeObject(serialiazedStudent);
-        
-        StartCoroutine(RestWebClient.Instance.HttpPost($"{RestWebClient.baseUrl}/apps/BOTIKI/aules/{auleCode}/students", 
-            studentJson, (r) => OnCreateStudentProfileCompleted(r, slot), new List<RequestHeader> { header } ));
+        StartCoroutine(RestWebClient.Instance.HttpPost($"{baseUrl}/apps/{appId}/students", 
+            json, (r) => OnCreateStudentProfileCompleted(r), header));
     }
 
-    private void OnCreateStudentProfileCompleted(Response response, int slot)
+    private void OnCreateStudentProfileCompleted(Response response)
     {
+        Debug.Log("Status: " + response.StatusCode+"\n"
+                  +"Data:"+ response.Data);
+
         int statusCode = (int)response.StatusCode;
         if (statusCode == 201)
         {
@@ -81,35 +98,34 @@ public class APIManager : Singleton<APIManager>
             int age = (int)data["student"]["age"];
 
 
-            SaveSystem.Create(slot, id:id, age:age, name:name);
+            actualStudent = SaveSystem.Create(id:id, age:age, name:name); 
         }
 
         LoginManager.Instance.ManageProfileMenu(statusCode);
     }
 
-    public void SetIdStudent(int id)
-    {
-        actualIdStudent = id;
-    }
-
     public void SendScores(string chapterId, List<Score> scores)
     {
+        Debug.Log("Sending Scores");
         //TODO serializar scores
         var scoresJson = JsonConvert.SerializeObject(scores);
         var Json = JsonConvert.SerializeObject(
-            new {student_id = actualIdStudent, 
-                    app_mobile = new {id = appMobileId,
+            new {student_id = actualStudent.id, 
+                    app_mobile = new {id = appId,
                         chapter = new {id = chapterId,
                             scores = scoresJson
                      }}});
         Debug.Log(Json);
         
-        StartCoroutine(RestWebClient.Instance.HttpPost($"{RestWebClient.baseUrl}/apps/BOTIKI/aules/{auleCode}/students/{actualIdStudent}/scores", 
-            Json, (r) => OnSendScoresCompleted(r), new List<RequestHeader> { header } ));
+        StartCoroutine(RestWebClient.Instance.HttpPost($"{baseUrl}/apps/{appId}/students/{actualStudent.id}/scores", 
+            Json, (r) => OnSendScoresCompleted(r), header));
     }
 
     private void OnSendScoresCompleted(Response response)
     {
+        Debug.Log("Status: " + response.StatusCode+"\n"
+                  +"Data:"+ response.Data);
+    
         int statusCode = (int)response.StatusCode;
         ScoreManager.Instance.ManageScoreMenu(statusCode);
     }

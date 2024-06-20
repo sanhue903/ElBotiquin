@@ -9,8 +9,6 @@ namespace RestClient.Core
 {
     public class RestWebClient : Singleton<RestWebClient>
     {
-        public const string baseUrl = "http://127.0.0.1:5000";
-        public const string mobileAppId = "BOTIKI";
         private const string defaultContentType = "application/json";
         public IEnumerator HttpGet(string url, System.Action<Response> callback)
         {

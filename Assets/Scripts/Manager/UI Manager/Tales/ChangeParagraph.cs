@@ -6,6 +6,7 @@ using UnityEngine;
 public class ChangeParagraph : MonoBehaviour
 {
     [SerializeField] private GameObject[] paragraphs; 
+    [SerializeField] private AudioSource[] sounds;
     [SerializeField] private string nextScene;
 
     public void ShowPreviousParagraph()
@@ -49,6 +50,7 @@ public class ChangeParagraph : MonoBehaviour
 
         if (actualParagraphIndex < paragraphs.Length - 1)
         {
+            sounds[actualParagraphIndex].Stop();
             paragraphs[actualParagraphIndex].SetActive(false);
             paragraphs[actualParagraphIndex + 1].SetActive(true);
         }

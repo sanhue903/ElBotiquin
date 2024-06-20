@@ -17,12 +17,15 @@ public class CreateStudentButton : MonoBehaviour
     }
     void Start()
     {
-        button = GetComponent<Button>();
-        button.interactable = false;
     }
 
     void Update()
     {
+        if (button == null)
+        {
+            return;
+        }
+
         if (ageForm.text.Length == 0)
         {
             button.interactable = false;
@@ -39,6 +42,12 @@ public class CreateStudentButton : MonoBehaviour
 
     public void SetCreateButton()
     {
+        if (button == null)
+        {
+            Debug.LogError("Button is null");
+            button = GetComponent<Button>();
+        }
+
         button.onClick.RemoveAllListeners();
         
         int age = int.Parse(ageForm.text);
@@ -46,6 +55,8 @@ public class CreateStudentButton : MonoBehaviour
         string name = nameForm.text;
         name = name.Replace("\u200B", string.Empty);
 
-        button.onClick.AddListener(() => LoginManager.Instance.CreateStudentProfile(slot, age, name));
+        Debug.Log("Button Setted");
+
+        button.onClick.AddListener(() => LoginManager.Instance.CreateStudentProfile(age, name));
     }
 }

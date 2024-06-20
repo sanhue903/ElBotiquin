@@ -12,7 +12,7 @@ public class ChapterManager : MonoBehaviour
 
     private void UnlockLastChapter()
     {
-        int lastChapter = LoginManager.lastChapter;
+        int lastChapter = APIManager.Instance.actualStudent.lastCompletedChapter;
 
         for (int i = 0; i < lastChapter; i++){
             chaptersButtons[i].interactable = true;

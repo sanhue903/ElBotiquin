@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class AuleCodeManager : Singleton<AuleCodeManager>
 {
+    void Start()
+    {
+        Debug.Log("AuleCodeManager started");
+    }
+    /*
     [SerializeField] private GameObject codeMenu;  
     [SerializeField] private TextMeshProUGUI auleErrorText;
     public void SendCode(TextMeshProUGUI text)
@@ -36,5 +41,5 @@ public class AuleCodeManager : Singleton<AuleCodeManager>
                 auleErrorText.text = "Error de conexión";
                 break;
         }
-    }
+    }*/
 }
