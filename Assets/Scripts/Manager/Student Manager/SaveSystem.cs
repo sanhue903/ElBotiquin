@@ -24,22 +24,17 @@ public static class SaveSystem
         return createdStudent;
     }
 
-    public static void Save(int lastChapter)
+    public static void Save(Student student, int lastChapter)
     {
-        
-        Student saveStudent = Load();
+        student.lastCompletedChapter = lastChapter;
 
-        saveStudent.lastCompletedChapter = lastChapter;
-
-        File.WriteAllText(path, JsonConvert.SerializeObject(saveStudent));
+        File.WriteAllText(path, JsonConvert.SerializeObject(student));
     }
 
     public static Student Load()
     {
 
         Student student = JsonConvert.DeserializeObject<Student>(File.ReadAllText(path));   
-        APIManager.Instance.actualStudent = student;
-
         return student;
     }
 

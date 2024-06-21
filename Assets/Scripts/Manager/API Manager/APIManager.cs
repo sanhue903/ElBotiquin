@@ -6,8 +6,6 @@ using RestClient.Core.Singletons;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
-using Unity.VisualScripting.Antlr3.Runtime;
-using System.Net.Http.Headers;
 
 public class APIManager : Singleton<APIManager>
 {
@@ -15,7 +13,6 @@ public class APIManager : Singleton<APIManager>
     private static bool isCreated;
 
     //Information
-    public Student actualStudent;
     //private string auleCode;
 
     //API Settings
@@ -88,36 +85,41 @@ public class APIManager : Singleton<APIManager>
         Debug.Log("Status: " + response.StatusCode+"\n"
                   +"Data:"+ response.Data);
 
-        int statusCode = (int)response.StatusCode;
-        if (statusCode == 201)
+ 
+        switch (response.StatusCode)
         {
-            JObject data = JObject.Parse(response.Data);
+            case 201:
+                JObject data = JObject.Parse(response.Data);
 
-            int id = (int)data["student"]["id"];   
-            string name = (string)data["student"]["name"];
-            int age = (int)data["student"]["age"];
+                int id = (int)data["student"]["id"];   
+                string name = (string)data["student"]["name"];
+                int age = (int)data["student"]["age"];
 
-
-            actualStudent = SaveSystem.Create(id:id, age:age, name:name); 
+                LoginManager.Instance.SaveStudentProfile(id, age, name);
+                break;
+            
+            default:
+                Debug.LogError("Error creating profile");
+                ErrorManager.Instance.ShowError($"Error al crear el perfil  estado: {response.StatusCode}");
+                break;
         }
-
-        LoginManager.Instance.ManageProfileMenu(statusCode);
     }
 
     public void SendScores(string chapterId, List<Score> scores)
     {
+        Student student = LoginManager.Instance.actualStudent;
         Debug.Log("Sending Scores");
         //TODO serializar scores
         var scoresJson = JsonConvert.SerializeObject(scores);
         var Json = JsonConvert.SerializeObject(
-            new {student_id = actualStudent.id, 
+            new {student_id = student.id, 
                     app_mobile = new {id = appId,
                         chapter = new {id = chapterId,
                             scores = scoresJson
                      }}});
         Debug.Log(Json);
         
-        StartCoroutine(RestWebClient.Instance.HttpPost($"{baseUrl}/apps/{appId}/students/{actualStudent.id}/scores", 
+        StartCoroutine(RestWebClient.Instance.HttpPost($"{baseUrl}/apps/{appId}/students/{student.id}/scores", 
             Json, (r) => OnSendScoresCompleted(r), header));
     }
 
@@ -126,8 +128,17 @@ public class APIManager : Singleton<APIManager>
         Debug.Log("Status: " + response.StatusCode+"\n"
                   +"Data:"+ response.Data);
     
-        int statusCode = (int)response.StatusCode;
-        ScoreManager.Instance.ManageScoreMenu(statusCode);
+        switch (response.StatusCode)
+        {
+            case 201:
+                Debug.Log("Scores sent");
+                break;
+            
+            default:
+                Debug.LogError("Error sending scores");
+                ErrorManager.Instance.ShowError($"Error al enviar las puntuaciones.  estado: {response.StatusCode}");
+                break;
+        }
     }
     
 }

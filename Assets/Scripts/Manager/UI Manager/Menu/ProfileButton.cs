@@ -12,7 +12,7 @@ public class ProfileButton : MonoBehaviour
         profileButton = GetComponent<Button>();
         profileButtonText = GetComponentInChildren<TextMeshProUGUI>();
 
-        if (!SaveSystem.Check())
+        if (LoginManager.Instance.actualStudent == null)
         {
             profileButtonText.text = "Crear Perfil";
             profileButton.onClick.AddListener(() => profileCreation.SetActive(true));
@@ -20,9 +20,7 @@ public class ProfileButton : MonoBehaviour
             return;
         }
 
-        Student student = SaveSystem.Load();
-        profileButtonText.text = student.name;
-    
-        profileButton.onClick.AddListener(() => LoginManager.Instance.LoadProfile(student));
+        profileButtonText.text = LoginManager.Instance.actualStudent.name;
+        profileButton.onClick.AddListener(() => SceneManager.Instance.LoadScene("MainMenu"));
     }
 }

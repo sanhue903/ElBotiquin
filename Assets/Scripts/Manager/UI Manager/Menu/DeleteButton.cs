@@ -6,18 +6,18 @@ public class DeleteButton : MonoBehaviour
     [SerializeField] GameObject confirmationPanel;
     public void TryDeleteSave()
    {
-        if (!SaveSystem.Check())
+        if (LoginManager.Instance.actualStudent == null)
         {
             Debug.LogError("No profile to delete");
             return;
         }
 
         confirmationPanel.SetActive(true);    
-        //SaveSystem.Delete();
     }
 
     public void ConfirmDelete()
     {
+        //Verlo utilizando login manager
         SaveSystem.Delete();
         confirmationPanel.SetActive(false);
     }

@@ -20,7 +20,7 @@ public class ScoreManager : Singleton<ScoreManager>
     {
         scores.Add(score);
     }
-
+//Ver que hacer con los scores que no se envian
     public void SendScores()
     {
         if (scores.Count == 0)
@@ -32,20 +32,6 @@ public class ScoreManager : Singleton<ScoreManager>
         if (LoginManager.online)
         {
             APIManager.Instance.SendScores(chapterId, scores);
-        }
-    }
-
-    public void ManageScoreMenu(int statusCode)
-    {
-        switch (statusCode)
-        {
-            case 201:
-                Debug.Log("Scores sent");
-                break;
-            
-            default:
-                Debug.Log("Error sending scores");
-                break;
         }
     }
 }
