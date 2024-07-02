@@ -298,7 +298,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 16339473}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47778c13d057ed610b8045b988e388ee, type: 3}
+  m_Script: {fileID: 11500000, guid: 07f981772a01cdc23a4386a6b4e13fb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &18149817
@@ -653,7 +653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a1f47657d9ad3fe9883419e5c7b4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idQuestion: AUTE12
+  number: 0
   isCorrect: 0
   answer: "Corri\xF3 hacia su casa para esconderse"
 --- !u!114 &121790423
@@ -1218,6 +1218,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 150104638}
+  - component: {fileID: 150104639}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -1240,6 +1241,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &150104639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150104637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c73a22eadeaf141ee85108a7c6b6e35b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundAudio: {fileID: 0}
 --- !u!1 &152005950
 GameObject:
   m_ObjectHideFlags: 0
@@ -1669,7 +1683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a1f47657d9ad3fe9883419e5c7b4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idQuestion: AUTE14
+  number: 0
   isCorrect: 0
   answer: "Porque quer\xEDa evitar volver a su casa"
 --- !u!114 &184186532
@@ -2177,7 +2191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a1f47657d9ad3fe9883419e5c7b4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idQuestion: AUTE16
+  number: 0
   isCorrect: 1
   answer: "Que todos tenemos un arco\xEDris de emociones, y no hay que avergonzarse
     por mostrarlo"
@@ -2612,7 +2626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a1f47657d9ad3fe9883419e5c7b4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idQuestion: AUTE16
+  number: 0
   isCorrect: 0
   answer: "Que sus compa\xF1eros no deber\xEDan mostrar los colores"
 --- !u!95 &243001534
@@ -2836,7 +2850,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 567850ba4a0702cdf937dab862ab9e85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chapterId: AUTEM1
 --- !u!1 &331638807
 GameObject:
   m_ObjectHideFlags: 0
@@ -4400,7 +4413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a1f47657d9ad3fe9883419e5c7b4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idQuestion: AUTE15
+  number: 0
   isCorrect: 0
   answer: "Porque quer\xEDa ver si pod\xEDa quitarse los colores"
 --- !u!222 &526567957
@@ -4505,7 +4518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a1f47657d9ad3fe9883419e5c7b4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idQuestion: AUTE12
+  number: 0
   isCorrect: 1
   answer: Jacinta se queda en el auto llorando
 --- !u!114 &529167094
@@ -5273,18 +5286,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a27d470b1f8011b4abd1098402abfb2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnswerButtons:
-  - {fileID: 243001531}
-  - {fileID: 225454825}
-  - {fileID: 735382446}
-  - {fileID: 709404578}
-  QuestionAudio: {fileID: 237142219}
-  AlternativesAudios:
-  - {fileID: 909035021}
-  - {fileID: 1470597407}
-  - {fileID: 1280933479}
-  - {fileID: 64453733}
-  offsetTime: 1
+  AlternativesParents: []
+  winningScreen: {fileID: 0}
+  AudiosParents: []
+  question: {fileID: 0}
+  correctAnswer: {fileID: 0}
+  incorrectAnswer: {fileID: 0}
+  questionId: 
+  number: 0
 --- !u!1 &674855921
 GameObject:
   m_ObjectHideFlags: 0
@@ -5718,7 +5727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a1f47657d9ad3fe9883419e5c7b4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idQuestion: AUTE16
+  number: 0
   isCorrect: 0
   answer: Que hay que mostrar las emociones de otra manera como bailando
 --- !u!114 &709404578
@@ -6182,7 +6191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a1f47657d9ad3fe9883419e5c7b4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idQuestion: AUTE16
+  number: 0
   isCorrect: 0
   answer: "Que era mejor seguir escondiendo sus emociones en el ba\xF1o"
 --- !u!114 &735382446
@@ -6782,7 +6791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a1f47657d9ad3fe9883419e5c7b4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idQuestion: AUTE11
+  number: 0
   isCorrect: 0
   answer: Estaba emocionada
 --- !u!95 &804553297
@@ -6908,7 +6917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a1f47657d9ad3fe9883419e5c7b4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idQuestion: AUTE11
+  number: 0
   isCorrect: 1
   answer: Tenia miedo
 --- !u!114 &811311996
@@ -7304,7 +7313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a1f47657d9ad3fe9883419e5c7b4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idQuestion: AUTE13
+  number: 0
   isCorrect: 0
   answer: Porque sus amigos se lo pidieron
 --- !u!222 &825744035
@@ -7890,18 +7899,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a27d470b1f8011b4abd1098402abfb2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnswerButtons:
-  - {fileID: 1736001034}
-  - {fileID: 1883421117}
-  - {fileID: 974929975}
-  - {fileID: 184186532}
-  QuestionAudio: {fileID: 570302013}
-  AlternativesAudios:
-  - {fileID: 982819401}
-  - {fileID: 756114832}
-  - {fileID: 1845287417}
-  - {fileID: 144861798}
-  offsetTime: 1
+  AlternativesParents: []
+  winningScreen: {fileID: 0}
+  AudiosParents: []
+  question: {fileID: 0}
+  correctAnswer: {fileID: 0}
+  incorrectAnswer: {fileID: 0}
+  questionId: 
+  number: 0
 --- !u!1 &909035019
 GameObject:
   m_ObjectHideFlags: 0
@@ -8586,7 +8591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a1f47657d9ad3fe9883419e5c7b4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idQuestion: AUTE14
+  number: 0
   isCorrect: 0
   answer: "Porque quer\xEDa ver la reacci\xF3n de sus profesores"
 --- !u!114 &974929975
@@ -8899,18 +8904,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a27d470b1f8011b4abd1098402abfb2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnswerButtons:
-  - {fileID: 1792919241}
-  - {fileID: 529167094}
-  - {fileID: 2030086253}
-  - {fileID: 121790423}
-  QuestionAudio: {fileID: 888651267}
-  AlternativesAudios:
-  - {fileID: 1475523071}
-  - {fileID: 722127870}
-  - {fileID: 788589444}
-  - {fileID: 941069094}
-  offsetTime: 1
+  AlternativesParents: []
+  winningScreen: {fileID: 0}
+  AudiosParents: []
+  question: {fileID: 0}
+  correctAnswer: {fileID: 0}
+  incorrectAnswer: {fileID: 0}
+  questionId: 
+  number: 0
 --- !u!1 &1028966825
 GameObject:
   m_ObjectHideFlags: 0
@@ -9051,7 +9052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a1f47657d9ad3fe9883419e5c7b4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idQuestion: AUTE15
+  number: 0
   isCorrect: 0
   answer: "Porque no quer\xEDa salir del ba\xF1o"
 --- !u!222 &1028966830
@@ -9448,18 +9449,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a27d470b1f8011b4abd1098402abfb2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnswerButtons:
-  - {fileID: 1121007302}
-  - {fileID: 1028966826}
-  - {fileID: 526567953}
-  - {fileID: 1543226966}
-  QuestionAudio: {fileID: 2121492768}
-  AlternativesAudios:
-  - {fileID: 2010808726}
-  - {fileID: 1249868356}
-  - {fileID: 946575086}
-  - {fileID: 584416953}
-  offsetTime: 1
+  AlternativesParents: []
+  winningScreen: {fileID: 0}
+  AudiosParents: []
+  question: {fileID: 0}
+  correctAnswer: {fileID: 0}
+  incorrectAnswer: {fileID: 0}
+  questionId: 
+  number: 0
 --- !u!1 &1055252079
 GameObject:
   m_ObjectHideFlags: 0
@@ -9916,7 +9913,7 @@ GameObject:
   - component: {fileID: 1101128216}
   - component: {fileID: 1101128215}
   m_Layer: 0
-  m_Name: ScreenManager
+  m_Name: SceneManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9931,7 +9928,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1101128214}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8da94c40dacfb770991e6107b83bb612, type: 3}
+  m_Script: {fileID: 11500000, guid: 88c7bbab31de5fc1d9f67c91eb84d4f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1101128216
@@ -10416,7 +10413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a1f47657d9ad3fe9883419e5c7b4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idQuestion: AUTE15
+  number: 0
   isCorrect: 0
   answer: "Porque quer\xEDa hacerse peinados divertidos"
 --- !u!95 &1121007305
@@ -10660,7 +10657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a1f47657d9ad3fe9883419e5c7b4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idQuestion: AUTE14
+  number: 0
   isCorrect: 0
   answer: "Porque no sab\xEDa qu\xE9 m\xE1s hacer"
 --- !u!114 &1170283349
@@ -11853,8 +11850,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f68da132464a03b05addbd593a825f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  codeMenu: {fileID: 1350332165}
-  auleErrorText: {fileID: 14910502}
 --- !u!1 &1374476151
 GameObject:
   m_ObjectHideFlags: 0
@@ -12970,7 +12965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a1f47657d9ad3fe9883419e5c7b4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idQuestion: AUTE15
+  number: 0
   isCorrect: 1
   answer: Porque al sentirnos mal, tenemos que buscar siempre la forma de calmarnos
 --- !u!114 &1543226966
@@ -13202,18 +13197,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a27d470b1f8011b4abd1098402abfb2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnswerButtons:
-  - {fileID: 804553294}
-  - {fileID: 811311996}
-  - {fileID: 1900928941}
-  - {fileID: 1916712817}
-  QuestionAudio: {fileID: 571333173}
-  AlternativesAudios:
-  - {fileID: 1106887151}
-  - {fileID: 126296652}
-  - {fileID: 281744197}
-  - {fileID: 1427024855}
-  offsetTime: 1
+  AlternativesParents: []
+  winningScreen: {fileID: 0}
+  AudiosParents: []
+  question: {fileID: 0}
+  correctAnswer: {fileID: 0}
+  incorrectAnswer: {fileID: 0}
+  questionId: 
+  number: 0
 --- !u!1 &1568950558
 GameObject:
   m_ObjectHideFlags: 0
@@ -14101,18 +14092,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a27d470b1f8011b4abd1098402abfb2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnswerButtons:
-  - {fileID: 825744031}
-  - {fileID: 1958060404}
-  - {fileID: 1894928567}
-  - {fileID: 1170283349}
-  QuestionAudio: {fileID: 220472084}
-  AlternativesAudios:
-  - {fileID: 1032872041}
-  - {fileID: 1509974429}
-  - {fileID: 1117430676}
-  - {fileID: 331638809}
-  offsetTime: 1
+  AlternativesParents: []
+  winningScreen: {fileID: 0}
+  AudiosParents: []
+  question: {fileID: 0}
+  correctAnswer: {fileID: 0}
+  incorrectAnswer: {fileID: 0}
+  questionId: 
+  number: 0
 --- !u!1 &1710272161
 GameObject:
   m_ObjectHideFlags: 0
@@ -14332,7 +14319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a1f47657d9ad3fe9883419e5c7b4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idQuestion: AUTE14
+  number: 0
   isCorrect: 1
   answer: "Porque hay que enfrentarse a los desaf\xEDos"
 --- !u!95 &1736001033
@@ -14760,7 +14747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a1f47657d9ad3fe9883419e5c7b4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idQuestion: AUTE12
+  number: 0
   isCorrect: 1
   answer: "Decidi\xF3 ponerse una bufanda y enfrentar el d\xEDa"
 --- !u!95 &1792919240
@@ -15539,7 +15526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a1f47657d9ad3fe9883419e5c7b4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idQuestion: AUTE14
+  number: 0
   isCorrect: 0
   answer: Porque sus amigos se lo pidieron
 --- !u!114 &1883421117
@@ -15689,7 +15676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a1f47657d9ad3fe9883419e5c7b4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idQuestion: AUTE13
+  number: 0
   isCorrect: 1
   answer: "Record\xF3 a su padre y se llen\xF3 de valent\xEDa"
 --- !u!95 &1894928566
@@ -15965,7 +15952,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a1f47657d9ad3fe9883419e5c7b4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idQuestion: AUTE11
+  number: 0
   isCorrect: 0
   answer: "Sent\xEDa felicidad"
 --- !u!114 &1900928941
@@ -16173,7 +16160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a1f47657d9ad3fe9883419e5c7b4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idQuestion: AUTE11
+  number: 0
   isCorrect: 0
   answer: Estaba triste
 --- !u!114 &1916712817
@@ -16429,7 +16416,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.1
+  m_fontSize: 53.7
   m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -16845,7 +16832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a1f47657d9ad3fe9883419e5c7b4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idQuestion: AUTE13
+  number: 0
   isCorrect: 0
   answer: "Porque quer\xEDa llamar la atenci\xF3n"
 --- !u!222 &1958060408
@@ -17265,7 +17252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a1f47657d9ad3fe9883419e5c7b4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idQuestion: AUTE12
+  number: 0
   isCorrect: 0
   answer: "Se escondi\xF3 debajo del asiento del auto"
 --- !u!114 &2030086253

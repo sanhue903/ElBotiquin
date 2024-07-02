@@ -1,7 +1,5 @@
 
 using RestClient.Core.Singletons;
-using UnityEngine;
-using System;
 
 public class LoginManager : Singleton<LoginManager>
 {

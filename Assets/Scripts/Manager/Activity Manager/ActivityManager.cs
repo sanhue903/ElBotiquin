@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using RestClient.Core.Singletons;
 using System.Collections.Generic;
-using System;
 
 public class ActivityManager : Singleton<ActivityManager>
 {
@@ -54,7 +53,7 @@ public class ActivityManager : Singleton<ActivityManager>
         if (questionIndex >= questions.Count)
         {
             ScoreManager.Instance.SendScores();
-            SceneManager.Instance.LoadScene("MainMenu");
+            SceneManager.Instance.LoadScene("");
             return;
         }
 
@@ -185,12 +184,11 @@ public class ActivityManager : Singleton<ActivityManager>
 
     public void SendScore(Alternative alternative)
     {
-        Timer timer = Timer.Instance;
-        float time = timer.GetMilliseconds();
+        float time = Timer.Instance.GetMilliseconds();
 
         Debug.Log("Time: " + time);
         ScoreManager.Instance.AddScore(new Score(actualQuestion.questionId, alternative.isCorrect, alternative.answer, time));
-        timer.ResetTimer();
+        Timer.Instance.ResetTimer();
     }
 } 
 
