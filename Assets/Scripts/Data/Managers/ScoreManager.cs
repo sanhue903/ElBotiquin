@@ -19,6 +19,7 @@ public class ScoreManager : Singleton<ScoreManager>
     public void AddScore(Score score)
     {
         scores.Add(score);
+        Debug.Log($"Score added:\n {score.GetInfo()}");
     }
 //Ver que hacer con los scores que no se envian
     public void SendScores()
@@ -29,9 +30,12 @@ public class ScoreManager : Singleton<ScoreManager>
             return;
         }
         
-        if (LoginManager.online)
+        if (!LoginManager.online)
         {
-            APIManager.Instance.SendScores(chapterId, scores);
+            Debug.Log("Scores not sent, offline mode");
+            return;
         }
+
+        APIManager.Instance.SendScores(chapterId, scores);
     }
 }

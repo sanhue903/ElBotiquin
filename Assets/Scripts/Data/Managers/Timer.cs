@@ -3,20 +3,20 @@ using UnityEngine;
 
 public class Timer : Singleton<Timer>
 {
-    private float milliseconds = 0;
+    private float seconds = 0;
 
     void Update()
     {
-        milliseconds += Time.deltaTime;
+        seconds += Time.deltaTime;
     }   
 
-    public float GetMilliseconds()
+    public float GetSeconds()
     {
-        return milliseconds;
+        return seconds;
     }
 
     public void ResetTimer()
     {
-        milliseconds = 0;
+        seconds = 0;
     }
 }

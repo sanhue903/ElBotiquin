@@ -1,4 +1,3 @@
-
 using RestClient.Core.Singletons;
 
 public class LoginManager : Singleton<LoginManager>
@@ -7,8 +6,8 @@ public class LoginManager : Singleton<LoginManager>
     private static bool isCreated;
 
     //API Settings
-    public static bool online;
-    public Student actualStudent;
+    public static bool online = true;
+    public Student actualStudent = null;
 
     void Awake()
     {
@@ -27,11 +26,10 @@ public class LoginManager : Singleton<LoginManager>
     {
         if(!SaveSystem.Check())
         {
-            actualStudent = null;
             return;
         }
 
-        SaveSystem.Load();
+        actualStudent = SaveSystem.Load();
     }
     public void CreateStudentProfile(int age, string name)
     {

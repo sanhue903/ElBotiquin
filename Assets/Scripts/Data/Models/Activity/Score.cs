@@ -1,14 +1,21 @@
+using Newtonsoft.Json;
+
 public class Score
     {
-        private string idQuestion;
-        private bool isCorrect;
-        private string answer;
-        private float time;
+        public string question_id;
+        public bool is_correct;
+        public string answer;
+        public float seconds;
         public Score(string idQuestion, bool isCorrect, string answer, float time)
         {
-            this.idQuestion = idQuestion;
-            this.isCorrect = isCorrect;
+            this.question_id = idQuestion;
+            this.is_correct = isCorrect;
             this.answer = answer;
-            this.time = time;
+            this.seconds = time;
+        }
+
+        public string GetInfo()
+        {
+            return $"Question: {question_id}\nCorrect: {is_correct}\nAnswer: {answer}\nTime: {seconds}";
         }
     } 

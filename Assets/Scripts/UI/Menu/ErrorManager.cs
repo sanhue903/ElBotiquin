@@ -4,7 +4,7 @@ using RestClient.Core.Singletons;
 
 public class ErrorManager : Singleton<ErrorManager> 
 {
-    [SerializeField] private GameObject errorPanel;
+    [SerializeField] private UnityEngine.GameObject errorPanel;
     [SerializeField] private TextMeshProUGUI errorText;
 
     public void ShowError(string error)

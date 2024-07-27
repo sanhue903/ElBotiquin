@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class ParagraphManager : MonoBehaviour
 {
-    [SerializeField] private GameObject paragraphParent; 
-    [SerializeField] private GameObject AudioParent;
+    [SerializeField] private UnityEngine.GameObject paragraphParent; 
+    [SerializeField] private UnityEngine.GameObject AudioParent;
     [SerializeField] private string nextScene;
 
     private int index;

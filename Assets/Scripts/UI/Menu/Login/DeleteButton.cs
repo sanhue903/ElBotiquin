@@ -3,7 +3,7 @@ using System;
 
 public class DeleteButton : MonoBehaviour
 {
-    [SerializeField] GameObject confirmationPanel;
+    [SerializeField] UnityEngine.GameObject confirmationPanel;
     public void TryDelete()
    {
         if (LoginManager.Instance.actualStudent == null)

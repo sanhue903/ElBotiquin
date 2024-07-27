@@ -16,10 +16,11 @@ public class APIManager : Singleton<APIManager>
     //private string auleCode;
 
     //API Settings
-    private const string baseUrl = "http://127.0.0.1:5000";
+    private const string apiUrl = "https://whale-app-idf72.ondigitalocean.app/api";
     private const string appId = "BOTIQI";
-    private const string token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcxODQ5MzU0NywianRpIjoiZWJmM2ZjOGYtZWJhOS00N2I4LWE4YTktNjIxYmZjOWVjODBmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IkJPVElRSSIsIm5iZiI6MTcxODQ5MzU0NywiY3NyZiI6ImVlYWIzZGRhLTNiNWQtNDNiNC1hYmYyLTAwMjVmMWFlNzEyNSJ9.7ThEnvU-FdAEU-EASz-wGCoArKqy9r8ImSc8CIm-AGw";
+    private const string token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyMTUzNDkzMCwianRpIjoiYzk1MWUzMzItMTIzYy00OWMwLTgxYmItNjc5OGE2OTgxM2RkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IkJPVElRSSIsIm5iZiI6MTcyMTUzNDkzMCwiY3NyZiI6ImMwMGQ4YjdlLTllYjEtNDM1Yy04ZTc4LTA4MzdkNzdhMjY2NSJ9.ebRMG-lT3Wumg5eEz4iuCrHRM8la740LLn9CN3RJFmw";
     private List<RequestHeader> header;
+    private string baseUrl;
       
     void Awake()
     {
@@ -45,6 +46,8 @@ public class APIManager : Singleton<APIManager>
             Key = "Authorization",
             Value = "Bearer " + token
         });
+
+        baseUrl = $"{apiUrl}/apps/{appId}/students";
     }
     
     // Aula no implementada en la api
@@ -75,8 +78,8 @@ public class APIManager : Singleton<APIManager>
         var json = JsonConvert.SerializeObject(new {age = age, name = name});
 
         Debug.Log(json);
-        
-        StartCoroutine(RestWebClient.Instance.HttpPost($"{baseUrl}/apps/{appId}/students", 
+        Debug.Log($"Sending Scores to:\n {baseUrl}");
+        StartCoroutine(RestWebClient.Instance.HttpPost(baseUrl, 
             json, (r) => OnCreateStudentProfileCompleted(r), header));
     }
 
@@ -108,19 +111,17 @@ public class APIManager : Singleton<APIManager>
     public void SendScores(string chapterId, List<Score> scores)
     {
         Student student = LoginManager.Instance.actualStudent;
-        Debug.Log("Sending Scores");
-        //TODO serializar scores
-        var scoresJson = JsonConvert.SerializeObject(scores);
-        var Json = JsonConvert.SerializeObject(
-            new {student_id = student.id, 
-                    app_mobile = new {id = appId,
-                        chapter = new {id = chapterId,
-                            scores = scoresJson
-                     }}});
-        Debug.Log(Json);
+        var json = JsonConvert.SerializeObject(
+            new {
+                chapter = new {
+                    id = chapterId,
+                    scores = scores
+            }});
+        Debug.Log(json);
         
-        StartCoroutine(RestWebClient.Instance.HttpPost($"{baseUrl}/apps/{appId}/students/{student.id}/scores", 
-            Json, (r) => OnSendScoresCompleted(r), header));
+        Debug.Log($"Sending Scores to:\n {baseUrl}/{student.id}/scores");
+        StartCoroutine(RestWebClient.Instance.HttpPost($"{baseUrl}/{student.id}/scores", 
+            json, (r) => OnSendScoresCompleted(r), header));
     }
 
     private void OnSendScoresCompleted(Response response)

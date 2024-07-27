@@ -23,7 +23,7 @@ namespace RestClient.Core.Singletons
                     }
                     if (_instance == null)
                     {
-                        GameObject obj = new GameObject();
+                        UnityEngine.GameObject obj = new UnityEngine.GameObject();
                         obj.name = string.Format("_{0}", typeof(T).Name);
                         _instance = obj.AddComponent<T>();
                     }

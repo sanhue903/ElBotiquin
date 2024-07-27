@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class ProfileButton : MonoBehaviour
 {
-    [SerializeField] GameObject profileCreation;
+    [SerializeField] UnityEngine.GameObject profileCreation;
     private Button profileButton;
     private TextMeshProUGUI profileButtonText;
     private void Start()
@@ -16,7 +16,6 @@ public class ProfileButton : MonoBehaviour
         {
             profileButtonText.text = "Crear Perfil";
             profileButton.onClick.AddListener(() => profileCreation.SetActive(true));
-
             return;
         }
 
