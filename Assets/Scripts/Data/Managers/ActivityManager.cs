@@ -56,8 +56,8 @@ public class ActivityManager : Singleton<ActivityManager>
         ActivityUIManager.Instance.NextQuestion(questions[questionIndex]);
     }
 
-    public string GetAcualQuestionName()
+    public QuestionData GetActualQuestionData()
     {
-        return questions[questionIndex].GetComponent<QuestionData>().nombre;
+        return questions[questionIndex].GetComponent<QuestionData>();
     }
 }

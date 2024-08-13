@@ -384,6 +384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Delegates: []
   color: {r: 0.94117653, g: 0.8470589, b: 0, a: 0.74509805}
+  index: 5
   colorName: Amarillo
 --- !u!114 &68435927
 MonoBehaviour:
@@ -884,7 +885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: AUTE22
-  nombre: 
+  nombre: "Preocupaci\xF3n"
   alternatives: []
 --- !u!1 &183656586
 GameObject:
@@ -1154,6 +1155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Delegates: []
   color: {r: 0, g: 0.8862746, b: 0, a: 0.74509805}
+  index: 3
   colorName: Verde
 --- !u!114 &211041656
 MonoBehaviour:
@@ -1493,6 +1495,7 @@ GameObject:
   - component: {fileID: 319960385}
   - component: {fileID: 319960387}
   - component: {fileID: 319960386}
+  - component: {fileID: 319960388}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -1557,6 +1560,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 319960384}
   m_CullTransparentMesh: 1
+--- !u!114 &319960388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319960384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07b69972f37b9d74eaa89d227d25786b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brushes:
+  - {fileID: 21300000, guid: 5439ea91bdde4384b9e7b2b354da5378, type: 3}
+  - {fileID: 21300000, guid: 692db52b579282049817cf7727038e0f, type: 3}
+  - {fileID: 21300000, guid: 586b95ad8adf4d043b6b60eb31be582a, type: 3}
+  - {fileID: 21300000, guid: 68fb4613d9149fe4a9c5727acbcbd52d, type: 3}
+  - {fileID: 21300000, guid: 474372e1f5acecb47a563aa7cfccaa22, type: 3}
+  - {fileID: 21300000, guid: 519c8272b894b1241a710def7c13bb96, type: 3}
+  - {fileID: 21300000, guid: ab52641a4169a9d4f843d72c6a9c2377, type: 3}
 --- !u!1 &323707302
 GameObject:
   m_ObjectHideFlags: 0
@@ -1767,6 +1790,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Delegates: []
   color: {r: 0.003921569, g: 0.6901961, b: 0.91372555, a: 0.74509805}
+  index: 1
   colorName: Azul
 --- !u!1 &424860598
 GameObject:
@@ -2223,7 +2247,7 @@ GameObject:
   - component: {fileID: 674802344}
   - component: {fileID: 674802345}
   m_Layer: 0
-  m_Name: Chest
+  m_Name: Pecho
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2311,7 +2335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cc83ce28a230254886982abc5006cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  answer: Pecho
+  answer: 
   isCorrect: 1
 --- !u!1 &679434982
 GameObject:
@@ -2476,7 +2500,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.1, y: 0.05}
   m_AnchorMax: {x: 0.9, y: 0.8}
-  m_AnchoredPosition: {x: 0.49987793, y: 0.28027344}
+  m_AnchoredPosition: {x: 0.5, y: 0.28027344}
   m_SizeDelta: {x: 1.350708, y: 0.26745605}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &685273369
@@ -2699,7 +2723,6 @@ GameObject:
   - component: {fileID: 754583802}
   - component: {fileID: 754583803}
   - component: {fileID: 754583804}
-  - component: {fileID: 754583805}
   m_Layer: 5
   m_Name: Miedo
   m_TagString: Untagged
@@ -2739,7 +2762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: AUTE21
-  nombre: 
+  nombre: Miedo
   alternatives: []
 --- !u!114 &754583804
 MonoBehaviour:
@@ -2758,19 +2781,6 @@ MonoBehaviour:
   incorrectAnswerAudio: {fileID: 0}
   alternatives: []
   winningScreen: {fileID: 0}
---- !u!114 &754583805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 754583801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ee82977e99cd234590161f89066ee63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!1 &766517700
 GameObject:
   m_ObjectHideFlags: 0
@@ -2820,7 +2830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: AUTE24
-  nombre: 
+  nombre: Felicidad
   alternatives: []
 --- !u!1 &818516020
 GameObject:
@@ -2968,7 +2978,7 @@ GameObject:
   - component: {fileID: 865772522}
   - component: {fileID: 865772523}
   m_Layer: 0
-  m_Name: Legs
+  m_Name: Piernas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3056,8 +3066,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cc83ce28a230254886982abc5006cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  answer: Piernas
-  isCorrect: 1
+  answer: 
+  isCorrect: 0
 --- !u!1 &881982553
 GameObject:
   m_ObjectHideFlags: 0
@@ -3072,7 +3082,7 @@ GameObject:
   - component: {fileID: 881982558}
   - component: {fileID: 881982559}
   m_Layer: 0
-  m_Name: RightArm
+  m_Name: Brazo Derecho
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3160,8 +3170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cc83ce28a230254886982abc5006cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  answer: Brazo derecho
-  isCorrect: 1
+  answer: 
+  isCorrect: 0
 --- !u!1 &898504308
 GameObject:
   m_ObjectHideFlags: 0
@@ -4185,7 +4195,7 @@ GameObject:
   - component: {fileID: 1293099212}
   - component: {fileID: 1293099213}
   m_Layer: 0
-  m_Name: Stomach
+  m_Name: Estomago
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4273,8 +4283,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cc83ce28a230254886982abc5006cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  answer: Estomago
-  isCorrect: 1
+  answer: 
+  isCorrect: 0
 --- !u!1 &1296046897
 GameObject:
   m_ObjectHideFlags: 0
@@ -4576,7 +4586,7 @@ GameObject:
   - component: {fileID: 1383267523}
   - component: {fileID: 1383267524}
   m_Layer: 0
-  m_Name: LeftArm
+  m_Name: Brazo Izquierdo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4664,8 +4674,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cc83ce28a230254886982abc5006cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  answer: Brazo izquierdo
-  isCorrect: 1
+  answer: 
+  isCorrect: 0
 --- !u!1 &1422600173
 GameObject:
   m_ObjectHideFlags: 0
@@ -5108,6 +5118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Delegates: []
   color: {r: 1, g: 0, b: 0.9333334, a: 0.74509805}
+  index: 4
   colorName: Rosado
 --- !u!114 &1511385380
 MonoBehaviour:
@@ -5611,6 +5622,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Delegates: []
   color: {r: 0.13333334, g: 0.13333334, b: 0.13333334, a: 0.74509805}
+  index: 6
   colorName: Negro
 --- !u!114 &1619673211
 MonoBehaviour:
@@ -5995,6 +6007,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Delegates: []
   color: {r: 1, g: 0.23137257, b: 0, a: 0.74509805}
+  index: 2
   colorName: Rojo
 --- !u!114 &1726139922
 MonoBehaviour:
@@ -6515,7 +6528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: AUTE23
-  nombre: 
+  nombre: Valentia
   alternatives: []
 --- !u!1 &1798513912
 GameObject:
@@ -6530,8 +6543,9 @@ GameObject:
   - component: {fileID: 1798513915}
   - component: {fileID: 1798513919}
   - component: {fileID: 1798513918}
+  - component: {fileID: 1798513920}
   m_Layer: 0
-  m_Name: Head
+  m_Name: Cabeza
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6606,7 +6620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cc83ce28a230254886982abc5006cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  answer: Cabeza
+  answer: 
   isCorrect: 1
 --- !u!114 &1798513919
 MonoBehaviour:
@@ -6620,7 +6634,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 685fc9fb2c6596b42a7ae88d63249f8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audios: []
+  audios:
+  - {fileID: 1422600175}
+  - {fileID: 679434984}
+  - {fileID: 1544054390}
+  - {fileID: 1763207583}
+--- !u!114 &1798513920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798513912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ee82977e99cd234590161f89066ee63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
 --- !u!1 &1807412248
 GameObject:
   m_ObjectHideFlags: 0
@@ -7526,7 +7557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: {r: 0.9607844, g: 0.9607844, b: 0.9607844, a: 0}
-  colorName: 
+  colorName: None
 --- !u!114 &2034587359
 MonoBehaviour:
   m_ObjectHideFlags: 0

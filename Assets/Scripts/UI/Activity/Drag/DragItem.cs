@@ -27,8 +27,6 @@ public class DragItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDrag
 
     public void OnDrag(PointerEventData eventData)
     {
-        Debug.Log("OnDrag");
-
         var newPos = eventData.delta / canvas.scaleFactor;
         rectTransform.anchoredPosition += newPos;
     }
