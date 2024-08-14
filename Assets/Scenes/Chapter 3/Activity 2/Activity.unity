@@ -280,8 +280,8 @@ Transform:
   m_Children:
   - {fileID: 1568950559}
   - {fileID: 2125850729}
-  - {fileID: 818516021}
   - {fileID: 1685646582}
+  - {fileID: 818516021}
   - {fileID: 1064691772}
   - {fileID: 1106435903}
   m_Father: {fileID: 1639427961}
@@ -2246,6 +2246,7 @@ GameObject:
   - component: {fileID: 674802342}
   - component: {fileID: 674802344}
   - component: {fileID: 674802345}
+  - component: {fileID: 674802346}
   m_Layer: 0
   m_Name: Pecho
   m_TagString: Untagged
@@ -2337,6 +2338,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   answer: 
   isCorrect: 1
+--- !u!114 &674802346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674802339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 685fc9fb2c6596b42a7ae88d63249f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audios:
+  - {fileID: 1684147241}
+  - {fileID: 1197367167}
+  - {fileID: 1870061529}
+  - {fileID: 1996779378}
 --- !u!1 &679434982
 GameObject:
   m_ObjectHideFlags: 0
@@ -2977,6 +2995,7 @@ GameObject:
   - component: {fileID: 865772520}
   - component: {fileID: 865772522}
   - component: {fileID: 865772523}
+  - component: {fileID: 865772524}
   m_Layer: 0
   m_Name: Piernas
   m_TagString: Untagged
@@ -3067,7 +3086,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   answer: 
-  isCorrect: 0
+  isCorrect: 1
+--- !u!114 &865772524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865772518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 685fc9fb2c6596b42a7ae88d63249f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audios:
+  - {fileID: 1296046899}
+  - {fileID: 106811857}
+  - {fileID: 1116952066}
+  - {fileID: 245384134}
 --- !u!1 &881982553
 GameObject:
   m_ObjectHideFlags: 0
@@ -3081,6 +3117,7 @@ GameObject:
   - component: {fileID: 881982556}
   - component: {fileID: 881982558}
   - component: {fileID: 881982559}
+  - component: {fileID: 881982560}
   m_Layer: 0
   m_Name: Brazo Derecho
   m_TagString: Untagged
@@ -3171,7 +3208,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   answer: 
-  isCorrect: 0
+  isCorrect: 1
+--- !u!114 &881982560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881982553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 685fc9fb2c6596b42a7ae88d63249f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audios:
+  - {fileID: 2116736347}
+  - {fileID: 1854856325}
+  - {fileID: 1382555900}
+  - {fileID: 1492669961}
 --- !u!1 &898504308
 GameObject:
   m_ObjectHideFlags: 0
@@ -4194,6 +4248,7 @@ GameObject:
   - component: {fileID: 1293099210}
   - component: {fileID: 1293099212}
   - component: {fileID: 1293099213}
+  - component: {fileID: 1293099214}
   m_Layer: 0
   m_Name: Estomago
   m_TagString: Untagged
@@ -4284,7 +4339,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   answer: 
-  isCorrect: 0
+  isCorrect: 1
+--- !u!114 &1293099214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293099207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 685fc9fb2c6596b42a7ae88d63249f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audios:
+  - {fileID: 1807412250}
+  - {fileID: 1021763479}
+  - {fileID: 1907546883}
+  - {fileID: 428454488}
 --- !u!1 &1296046897
 GameObject:
   m_ObjectHideFlags: 0
@@ -4585,6 +4657,7 @@ GameObject:
   - component: {fileID: 1383267521}
   - component: {fileID: 1383267523}
   - component: {fileID: 1383267524}
+  - component: {fileID: 1383267525}
   m_Layer: 0
   m_Name: Brazo Izquierdo
   m_TagString: Untagged
@@ -4675,7 +4748,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   answer: 
-  isCorrect: 0
+  isCorrect: 1
+--- !u!114 &1383267525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383267518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 685fc9fb2c6596b42a7ae88d63249f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audios:
+  - {fileID: 2116736347}
+  - {fileID: 1854856325}
+  - {fileID: 1382555900}
+  - {fileID: 1492669961}
 --- !u!1 &1422600173
 GameObject:
   m_ObjectHideFlags: 0
