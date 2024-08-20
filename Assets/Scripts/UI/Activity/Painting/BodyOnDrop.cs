@@ -10,13 +10,26 @@ public class BodyOnDrop : EventTrigger
             return;
         }
 
+        DragBrush brush = eventData.pointerDrag.GetComponent<DragBrush>();       
+
+        if (!brush.hasColor)
+        {
+            Debug.LogError("No color");
+            return;
+        }
+
         Debug.Log($"Painting: {gameObject.name}");
 
-        ActivityManager.Instance.GetActualQuestionData().gameObject.GetComponent<QuestionUI>().correctAnswerAudio = GetComponent<EmotionsAudios>().GetAudio(0);
-        GetComponent<Image>().color = eventData.pointerDrag.GetComponent<DragBrush>().color;       
+        QuestionData actualQuestion = ActivityManager.Instance.GetActualQuestionData();
+        actualQuestion.gameObject.GetComponent<QuestionUI>().correctAnswerAudio = GetComponent<EmotionsAudios>().GetAudio(0);
+        
+        
+        GetComponent<Image>().color = brush.color;
 
-        AlternativeData alternative = eventData.pointerDrag.GetComponent<AlternativeData>();
-        alternative.answer += $"-{gameObject.name}";
-        ActivityManager.Instance.Answer(alternative);
+        AlternativeData alternative = GetComponent<AlternativeData>();
+        alternative.answer = $"{actualQuestion.nombre}-{gameObject.name}-{brush.colorName}";
+        alternative.isCorrect = true;
+
+        WhiteboardManager.Instance.AddAnswer(gameObject.name, alternative);
     }
 }

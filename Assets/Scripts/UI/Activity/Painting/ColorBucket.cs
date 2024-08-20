@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class ColorBucket : EventTrigger
@@ -6,6 +7,7 @@ public class ColorBucket : EventTrigger
     [SerializeField] private Color color;
     [SerializeField] private int index;
     [SerializeField] private string colorName;
+    [SerializeField] private Sprite brush;
     public override void OnDrop(PointerEventData eventData)
     {
         Debug.Log("OnDrop" + gameObject.name);
@@ -17,8 +19,6 @@ public class ColorBucket : EventTrigger
         Debug.Log($"Get color: {colorName}");
 
         eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
-        eventData.pointerDrag.GetComponent<DragBrush>().color = color; 
-        eventData.pointerDrag.transform.GetChild(0).GetComponent<BrushImages>().SetImage(index); 
-        eventData.pointerDrag.GetComponent<AlternativeData>().answer = $"{ActivityManager.Instance.GetActualQuestionData().name}-{colorName}";
+        eventData.pointerDrag.GetComponent<DragBrush>().SetBrush(brush, color, colorName);
     }
 }

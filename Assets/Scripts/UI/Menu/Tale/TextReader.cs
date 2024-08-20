@@ -4,7 +4,8 @@ using Newtonsoft.Json.Linq;
 using TMPro;
 public class TextReader : MonoBehaviour
 {
-    private float delay = 0.065f;
+    [SerializeField] private float titleDelay = 2f;
+    [SerializeField] private float delay = 0.065f;
     [SerializeField] private TextMeshProUGUI textContainer;
     [SerializeField] private int indexParagraph;
 
