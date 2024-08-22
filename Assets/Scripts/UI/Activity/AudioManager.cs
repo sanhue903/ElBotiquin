@@ -20,6 +20,7 @@ public class AudioManager : Singleton<AudioManager>
         }
         else
             Debug.Log("Audio is null");
+            return;
 
         actualAudio = audio;
         actualAudio.Play();
