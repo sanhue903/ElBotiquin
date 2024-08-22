@@ -32,7 +32,7 @@ public class TextReader : MonoBehaviour
     {
         if (indexParagraph == 0)
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(titleDelay);
         }
 
         StartCoroutine(ReadText());
