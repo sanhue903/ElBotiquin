@@ -19,9 +19,14 @@ public class AudioManager : Singleton<AudioManager>
             actualAudio.Stop();
         }
         else
-            Debug.Log("Audio is null");
-            return;
+            Debug.Log("last audio was null");
 
+        if (audio == null)
+        {
+            Debug.Log("audio is null");
+            return;
+        }
+        
         actualAudio = audio;
         actualAudio.Play();
     }

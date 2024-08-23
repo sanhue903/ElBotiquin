@@ -294,9 +294,6 @@ GameObject:
   - component: {fileID: 20591052}
   - component: {fileID: 20591057}
   - component: {fileID: 20591056}
-  - component: {fileID: 20591055}
-  - component: {fileID: 20591054}
-  - component: {fileID: 20591053}
   m_Layer: 0
   m_Name: Estomago
   m_TagString: Untagged
@@ -323,50 +320,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.20819092, y: 0.31100464}
   m_SizeDelta: {x: -1.5056648, y: 2.0586967}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &20591053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 20591051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 685fc9fb2c6596b42a7ae88d63249f8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audios:
-  - {fileID: 1807412250}
-  - {fileID: 1021763479}
-  - {fileID: 1907546883}
-  - {fileID: 428454488}
---- !u!114 &20591054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 20591051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cc83ce28a230254886982abc5006cda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  answer: 
-  isCorrect: 0
---- !u!114 &20591055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 20591051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ee82977e99cd234590161f89066ee63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &20591056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -795,9 +748,6 @@ GameObject:
   - component: {fileID: 114464774}
   - component: {fileID: 114464779}
   - component: {fileID: 114464778}
-  - component: {fileID: 114464777}
-  - component: {fileID: 114464776}
-  - component: {fileID: 114464775}
   m_Layer: 0
   m_Name: Brazo Izquierdo
   m_TagString: Untagged
@@ -824,50 +774,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.10900879}
   m_SizeDelta: {x: -0.8104, y: -0.21780014}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &114464775
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 114464773}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 685fc9fb2c6596b42a7ae88d63249f8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audios:
-  - {fileID: 2116736347}
-  - {fileID: 1854856325}
-  - {fileID: 1382555900}
-  - {fileID: 1492669961}
---- !u!114 &114464776
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 114464773}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cc83ce28a230254886982abc5006cda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  answer: 
-  isCorrect: 0
---- !u!114 &114464777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 114464773}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ee82977e99cd234590161f89066ee63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &114464778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1295,9 +1201,6 @@ GameObject:
   - component: {fileID: 221728402}
   - component: {fileID: 221728407}
   - component: {fileID: 221728406}
-  - component: {fileID: 221728405}
-  - component: {fileID: 221728404}
-  - component: {fileID: 221728403}
   m_Layer: 0
   m_Name: Cabeza
   m_TagString: Untagged
@@ -1324,50 +1227,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.08843994, y: -3}
   m_SizeDelta: {x: 1.8625908, y: -0.34915733}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &221728403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 221728401}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ee82977e99cd234590161f89066ee63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates: []
---- !u!114 &221728404
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 221728401}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cc83ce28a230254886982abc5006cda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  answer: 
-  isCorrect: 0
---- !u!114 &221728405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 221728401}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 685fc9fb2c6596b42a7ae88d63249f8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audios:
-  - {fileID: 1422600175}
-  - {fileID: 679434984}
-  - {fileID: 1544054390}
-  - {fileID: 1763207583}
 --- !u!114 &221728406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1706,7 +1565,6 @@ GameObject:
   - component: {fileID: 312999271}
   - component: {fileID: 312999275}
   - component: {fileID: 312999274}
-  - component: {fileID: 312999273}
   - component: {fileID: 312999272}
   m_Layer: 0
   m_Name: Brush
@@ -1756,21 +1614,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &312999273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 312999270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c97572d38688a04489bded65ec09b5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 0.9607844, g: 0.9607844, b: 0.9607844, a: 0}
-  colorName: None
-  hasColor: 0
 --- !u!225 &312999274
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -3073,7 +2916,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1af687f56715c814aa7c9a1b57bd8a05, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -4929,7 +4772,6 @@ GameObject:
   - component: {fileID: 1136449485}
   - component: {fileID: 1136449488}
   - component: {fileID: 1136449487}
-  - component: {fileID: 1136449486}
   m_Layer: 0
   m_Name: GreenBucket
   m_TagString: Untagged
@@ -4957,23 +4799,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -10}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1136449486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1136449484}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aec7d12157160cc44bdca5a3b8f860c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates: []
-  color: {r: 0, g: 0.8862746, b: 0, a: 0.74509805}
-  index: 3
-  colorName: Verde
-  brush: {fileID: 21300000, guid: 68fb4613d9149fe4a9c5727acbcbd52d, type: 3}
 --- !u!114 &1136449487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6426,7 +6251,6 @@ GameObject:
   - component: {fileID: 1461552097}
   - component: {fileID: 1461552100}
   - component: {fileID: 1461552099}
-  - component: {fileID: 1461552098}
   m_Layer: 0
   m_Name: RedBucket
   m_TagString: Untagged
@@ -6454,23 +6278,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -10}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1461552098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1461552096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aec7d12157160cc44bdca5a3b8f860c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates: []
-  color: {r: 1, g: 0.23137257, b: 0, a: 0.74509805}
-  index: 2
-  colorName: Rojo
-  brush: {fileID: 21300000, guid: 586b95ad8adf4d043b6b60eb31be582a, type: 3}
 --- !u!114 &1461552099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7158,6 +6965,7 @@ GameObject:
   - component: {fileID: 1564118145}
   - component: {fileID: 1564118147}
   - component: {fileID: 1564118146}
+  - component: {fileID: 1564118148}
   m_Layer: 5
   m_Name: Instructions
   m_TagString: Untagged
@@ -7225,6 +7033,102 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1564118144}
   m_CullTransparentMesh: 1
+--- !u!82 &1564118148
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564118144}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 5691c0203818b5f3d9cb902666a2ab78, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1568950558
 GameObject:
   m_ObjectHideFlags: 0
@@ -7565,7 +7469,6 @@ GameObject:
   - component: {fileID: 1655602143}
   - component: {fileID: 1655602146}
   - component: {fileID: 1655602145}
-  - component: {fileID: 1655602144}
   m_Layer: 0
   m_Name: PinkBucket
   m_TagString: Untagged
@@ -7593,23 +7496,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -10}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1655602144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1655602142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aec7d12157160cc44bdca5a3b8f860c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates: []
-  color: {r: 1, g: 0, b: 0.9333334, a: 0.74509805}
-  index: 4
-  colorName: Rosado
-  brush: {fileID: 21300000, guid: 474372e1f5acecb47a563aa7cfccaa22, type: 3}
 --- !u!114 &1655602145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7659,7 +7545,6 @@ GameObject:
   - component: {fileID: 1656000799}
   - component: {fileID: 1656000802}
   - component: {fileID: 1656000801}
-  - component: {fileID: 1656000800}
   m_Layer: 0
   m_Name: NoirBucket
   m_TagString: Untagged
@@ -7687,23 +7572,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -10}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1656000800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1656000798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aec7d12157160cc44bdca5a3b8f860c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates: []
-  color: {r: 0.13333334, g: 0.13333334, b: 0.13333334, a: 0.74509805}
-  index: 6
-  colorName: Negro
-  brush: {fileID: 21300000, guid: ab52641a4169a9d4f843d72c6a9c2377, type: 3}
 --- !u!114 &1656000801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8539,9 +8407,6 @@ GameObject:
   - component: {fileID: 1770207091}
   - component: {fileID: 1770207096}
   - component: {fileID: 1770207095}
-  - component: {fileID: 1770207094}
-  - component: {fileID: 1770207093}
-  - component: {fileID: 1770207092}
   m_Layer: 0
   m_Name: Piernas
   m_TagString: Untagged
@@ -8568,50 +8433,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.12438965, y: -0.6796875}
   m_SizeDelta: {x: -1.2438998, y: 0.9250002}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1770207092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1770207090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 685fc9fb2c6596b42a7ae88d63249f8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audios:
-  - {fileID: 1296046899}
-  - {fileID: 106811857}
-  - {fileID: 1116952066}
-  - {fileID: 245384134}
---- !u!114 &1770207093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1770207090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cc83ce28a230254886982abc5006cda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  answer: 
-  isCorrect: 0
---- !u!114 &1770207094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1770207090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ee82977e99cd234590161f89066ee63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &1770207095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9556,9 +9377,6 @@ GameObject:
   - component: {fileID: 1908753394}
   - component: {fileID: 1908753399}
   - component: {fileID: 1908753398}
-  - component: {fileID: 1908753397}
-  - component: {fileID: 1908753396}
-  - component: {fileID: 1908753395}
   m_Layer: 0
   m_Name: Pecho
   m_TagString: Untagged
@@ -9585,50 +9403,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.23855591, y: 1.4940796}
   m_SizeDelta: {x: -0.18676758, y: -0.118629456}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1908753395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1908753393}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 685fc9fb2c6596b42a7ae88d63249f8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audios:
-  - {fileID: 1684147241}
-  - {fileID: 1197367167}
-  - {fileID: 1870061529}
-  - {fileID: 1996779378}
---- !u!114 &1908753396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1908753393}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cc83ce28a230254886982abc5006cda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  answer: 
-  isCorrect: 0
---- !u!114 &1908753397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1908753393}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ee82977e99cd234590161f89066ee63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &1908753398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9678,7 +9452,6 @@ GameObject:
   - component: {fileID: 1915694116}
   - component: {fileID: 1915694119}
   - component: {fileID: 1915694118}
-  - component: {fileID: 1915694117}
   m_Layer: 0
   m_Name: YellowBucket
   m_TagString: Untagged
@@ -9706,23 +9479,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -10}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1915694117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1915694115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aec7d12157160cc44bdca5a3b8f860c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates: []
-  color: {r: 0.94117653, g: 0.8470589, b: 0, a: 0.74509805}
-  index: 5
-  colorName: Amarillo
-  brush: {fileID: 21300000, guid: 519c8272b894b1241a710def7c13bb96, type: 3}
 --- !u!114 &1915694118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9772,9 +9528,6 @@ GameObject:
   - component: {fileID: 1981417748}
   - component: {fileID: 1981417753}
   - component: {fileID: 1981417752}
-  - component: {fileID: 1981417751}
-  - component: {fileID: 1981417750}
-  - component: {fileID: 1981417749}
   m_Layer: 0
   m_Name: Brazo Derecho
   m_TagString: Untagged
@@ -9801,50 +9554,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.5, y: -0.31097412}
   m_SizeDelta: {x: -0.914093, y: -0.62199974}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1981417749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1981417747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 685fc9fb2c6596b42a7ae88d63249f8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audios:
-  - {fileID: 2116736347}
-  - {fileID: 1854856325}
-  - {fileID: 1382555900}
-  - {fileID: 1492669961}
---- !u!114 &1981417750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1981417747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cc83ce28a230254886982abc5006cda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  answer: 
-  isCorrect: 0
---- !u!114 &1981417751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1981417747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ee82977e99cd234590161f89066ee63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &1981417752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10022,7 +9731,6 @@ GameObject:
   - component: {fileID: 2002845153}
   - component: {fileID: 2002845156}
   - component: {fileID: 2002845155}
-  - component: {fileID: 2002845154}
   m_Layer: 0
   m_Name: BlueBucket
   m_TagString: Untagged
@@ -10050,23 +9758,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20.00001, y: -9.999999}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2002845154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2002845152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aec7d12157160cc44bdca5a3b8f860c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates: []
-  color: {r: 0.003921569, g: 0.6901961, b: 0.91372555, a: 0.74509805}
-  index: 1
-  colorName: Azul
-  brush: {fileID: 21300000, guid: 692db52b579282049817cf7727038e0f, type: 3}
 --- !u!114 &2002845155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10179,6 +9870,7 @@ MonoBehaviour:
   color: {r: 0.9607844, g: 0.9607844, b: 0.9607844, a: 0}
   colorName: None
   hasColor: 0
+  defaultImage: {fileID: 21300000, guid: 5439ea91bdde4384b9e7b2b354da5378, type: 3}
 --- !u!1 &2067660217
 GameObject:
   m_ObjectHideFlags: 0

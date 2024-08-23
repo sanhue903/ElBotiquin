@@ -10,20 +10,21 @@ public class DragBrush : DragItem
     public bool hasColor;
     
     private Image image;
-    private Image defaultImage;
+    [SerializeField] private Sprite defaultImage;
 
     void Start()
     {
         image = gameObject.transform.GetChild(0).GetComponent<Image>();
-        defaultImage = image;
         hasColor = false;
     }
 
     
     public void ResetBrush()
     {
+        Debug.Log("Reset Brush");
+
         color = Color.white;
-        image.sprite = defaultImage.sprite;
+        image.sprite = defaultImage;
         hasColor = false;
     }
 
@@ -32,6 +33,6 @@ public class DragBrush : DragItem
         this.image.sprite = image;
         this.color = color;
         this.colorName = colorName;
-        this.hasColor = true;
+        hasColor = true;
     }
 }
