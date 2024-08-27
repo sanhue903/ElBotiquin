@@ -12,4 +12,9 @@ public class ActivityDataManager : Singleton<ActivityDataManager>
         ScoreManager.Instance.AddScore(score);
         Timer.Instance.ResetTimer();
     }
+
+    public void SendAlternatives()
+    {
+        ScoreManager.Instance.SendScores();
+    }
 }

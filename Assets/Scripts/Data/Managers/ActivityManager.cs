@@ -49,6 +49,7 @@ public class ActivityManager : Singleton<ActivityManager>
         if (questionIndex >= questions.Count)
         {
             Debug.Log("No more questions");
+            ActivityDataManager.Instance.SendAlternatives();
             ActivityUIManager.Instance.FinishActivity();
             return;
         }

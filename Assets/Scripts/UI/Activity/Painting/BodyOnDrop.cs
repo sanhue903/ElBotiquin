@@ -28,8 +28,7 @@ public class BodyOnDrop : EventTrigger
 
         AlternativeData alternative = GetComponent<AlternativeData>();
         alternative.answer = $"{actualQuestion.nombre}-{gameObject.name}-{brush.colorName}";
-        alternative.isCorrect = true;
 
-        WhiteboardManager.Instance.AddAnswer(gameObject.name, alternative);
+        ActivityManager.Instance.Answer(alternative);
     }
 }

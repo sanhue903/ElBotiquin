@@ -173,6 +173,7 @@ public class ActivityUIManager : Singleton<ActivityUIManager>
     public void FinishActivity()
     {
         Debug.Log("Finishing activity");
+        
         UnityEngine.SceneManagement.SceneManager.LoadScene(nextScene);
     }
     public void Answer(bool isCorrect)
