@@ -6,6 +6,7 @@ using RestClient.Core.Singletons;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
+using System;
 
 public class APIManager : Singleton<APIManager>
 {
@@ -20,7 +21,6 @@ public class APIManager : Singleton<APIManager>
     private const string appId = "BOTIQI";
     private const string token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyMTUzNDkzMCwianRpIjoiYzk1MWUzMzItMTIzYy00OWMwLTgxYmItNjc5OGE2OTgxM2RkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IkJPVElRSSIsIm5iZiI6MTcyMTUzNDkzMCwiY3NyZiI6ImMwMGQ4YjdlLTllYjEtNDM1Yy04ZTc4LTA4MzdkNzdhMjY2NSJ9.ebRMG-lT3Wumg5eEz4iuCrHRM8la740LLn9CN3RJFmw";
     private List<RequestHeader> header;
-    private string baseUrl;
       
     void Awake()
     {
@@ -46,8 +46,6 @@ public class APIManager : Singleton<APIManager>
             Key = "Authorization",
             Value = "Bearer " + token
         });
-
-        baseUrl = $"{apiUrl}/apps/{appId}/students";
     }
     
     // Aula no implementada en la api
@@ -71,15 +69,34 @@ public class APIManager : Singleton<APIManager>
     }
     */
 
+    private bool checkUrl(string url)
+    {
+        if (Uri.TryCreate(url, UriKind.Absolute, out Uri uriResult))
+        {
+            return true;
+        }
+        
+        Debug.LogError("Invalid URL: " + url);
+        return false;
+    }
+
     public void CreateStudentProfile(int age, string name)
     {
         Debug.Log("Creating Student Profile");
 
         var json = JsonConvert.SerializeObject(new {age = age, name = name});
 
+        string url = $"{apiUrl}/apps/{appId}/students"; 
         Debug.Log(json);
-        Debug.Log($"Sending Scores to:\n {baseUrl}");
-        StartCoroutine(RestWebClient.Instance.HttpPost(baseUrl, 
+        Debug.Log($"Send student to:\n {url}");
+
+        if (!checkUrl(url))
+        {
+            return;
+        }
+        
+        Debug.Log("Sending request");
+        StartCoroutine(RestWebClient.Instance.HttpPost(url, 
             json, (r) => OnCreateStudentProfileCompleted(r), header));
     }
 
@@ -119,8 +136,16 @@ public class APIManager : Singleton<APIManager>
             }});
         Debug.Log(json);
         
-        Debug.Log($"Sending Scores to:\n {baseUrl}/{student.id}/scores");
-        StartCoroutine(RestWebClient.Instance.HttpPost($"{baseUrl}/{student.id}/scores", 
+        string url = $"{apiUrl}/apps/{appId}/students/{student.id}/scores";
+
+        Debug.Log($"Sending Scores to:\n {url}");
+
+        if (!checkUrl(url))
+        {
+            return;
+        }
+
+        StartCoroutine(RestWebClient.Instance.HttpPost(url, 
             json, (r) => OnSendScoresCompleted(r), header));
     }
 
