@@ -17,9 +17,9 @@ public class APIManager : Singleton<APIManager>
     //private string auleCode;
 
     //API Settings
-    private const string apiUrl = "https://whale-app-idf72.ondigitalocean.app/api";
+    private const string apiUrl = "http://127.0.0.1:5000";
     private const string appId = "BOTIQI";
-    private const string token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyMTUzNDkzMCwianRpIjoiYzk1MWUzMzItMTIzYy00OWMwLTgxYmItNjc5OGE2OTgxM2RkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IkJPVElRSSIsIm5iZiI6MTcyMTUzNDkzMCwiY3NyZiI6ImMwMGQ4YjdlLTllYjEtNDM1Yy04ZTc4LTA4MzdkNzdhMjY2NSJ9.ebRMG-lT3Wumg5eEz4iuCrHRM8la740LLn9CN3RJFmw";
+    private const string token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyNTUwNDc4MywianRpIjoiNDZmNzEyMGEtZmZmYi00ZDkzLWFhMjktYTM2OWYxMzQ4ZDg2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IkJPVElRSSIsIm5iZiI6MTcyNTUwNDc4MywiY3NyZiI6ImFhY2Q0M2IzLTdkMTAtNDgwMC1iNDQyLTA4YzYzODAyZGMwMCJ9.Sdfxn_qIAU42sO5k58nPfINxhkuset6vVeiQPOGU_A8";
     private List<RequestHeader> header;
       
     void Awake()
@@ -89,12 +89,13 @@ public class APIManager : Singleton<APIManager>
         string url = $"{apiUrl}/apps/{appId}/students"; 
         Debug.Log(json);
         Debug.Log($"Send student to:\n {url}");
+        Debug.Log("Header: token " + header[1].Value);
 
         if (!checkUrl(url))
         {
             return;
         }
-        
+
         Debug.Log("Sending request");
         StartCoroutine(RestWebClient.Instance.HttpPost(url, 
             json, (r) => OnCreateStudentProfileCompleted(r), header));

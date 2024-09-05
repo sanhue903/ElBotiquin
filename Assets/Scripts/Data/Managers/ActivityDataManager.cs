@@ -5,7 +5,10 @@ public class ActivityDataManager : Singleton<ActivityDataManager>
 {
     [SerializeField]
     private string chapterId;
-
+    void Start()
+    {
+        ScoreManager.Instance.SetChapterId(chapterId);
+    }
     public void Answer(string questionId, AlternativeData answer)
     {
         Score score = new Score(questionId, answer.isCorrect, answer.answer, Timer.Instance.GetSeconds());
