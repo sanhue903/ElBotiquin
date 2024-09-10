@@ -7,18 +7,13 @@ public class CreateStudentButton : MonoBehaviour
 {
     private Button button;
 
-    private int slot;
     [SerializeField] private TMP_InputField nameForm;
     [SerializeField] private TMP_InputField ageForm;
 
-    public void SetSlot(int slot)
+    void Awake()
     {
-        this.slot = slot;
+        button = GetComponent<Button>();
     }
-    void Start()
-    {
-    }
-
     void Update()
     {
         if (button == null)
@@ -37,6 +32,12 @@ public class CreateStudentButton : MonoBehaviour
 
     void OnDisable()
     {
+        if (button == null)
+        {
+            button = GetComponent<Button>();
+        }
+//
+        Debug.Log("Button Disabled");
         button.onClick.RemoveAllListeners();
     }
 

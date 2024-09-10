@@ -20,5 +20,5 @@ public class DeleteButton : MonoBehaviour
         //Verlo utilizando login manager
         LoginManager.Instance.DeleteStudentProfile();
         confirmationPanel.SetActive(false);
-    }
+}
 }

@@ -2769,7 +2769,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 910014664}
         m_TargetAssemblyTypeName: DeleteButton, Assembly-CSharp
-        m_MethodName: DeleteProfile
+        m_MethodName: TryDelete
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2829,7 +2829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f1d8a14f423a3447814207d3bd93a7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  confirmationPanel: {fileID: 0}
+  confirmationPanel: {fileID: 1787822154}
 --- !u!1 &916251733
 GameObject:
   m_ObjectHideFlags: 0
@@ -5991,6 +5991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profileCreation: {fileID: 811321517}
+  deleteButton: {fileID: 910014659}
 --- !u!1 &1681954719
 GameObject:
   m_ObjectHideFlags: 0

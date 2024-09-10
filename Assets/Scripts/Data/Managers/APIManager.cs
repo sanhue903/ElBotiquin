@@ -11,7 +11,7 @@ using System;
 public class APIManager : Singleton<APIManager>
 {
     //Singleton
-    private static bool isCreated;
+    private static bool isCreated = false;
 
     //Information
     //private string auleCode;
@@ -28,24 +28,23 @@ public class APIManager : Singleton<APIManager>
         {
             DontDestroyOnLoad(gameObject);
             isCreated = true;
+            
+            this.header = new List<RequestHeader>();
+            this.header.Add( new RequestHeader(Key: "Content-Type", Value: "application/json"));
+            this.header.Add(new RequestHeader(Key: "Authorization", Value: "Bearer " + token));
+
+            Debug.Log($"URL: {apiUrl}\nHeader: {this.header[0].Key} {this.header[0].Value}\n{this.header[1].Key} {this.header[1].Value}");
         }
         else
         {
+            Debug.Log("Destroying APIManager");
             Destroy(gameObject);
         }
+
     }
     void Start()
     {
-        header = new List<RequestHeader>();
-        header.Add(new RequestHeader {
-            Key = "Content-Type",
-            Value = "application/json"
-        });
-
-        header.Add(new RequestHeader {
-            Key = "Authorization",
-            Value = "Bearer " + token
-        });
+        
     }
     
     // Aula no implementada en la api
@@ -89,7 +88,7 @@ public class APIManager : Singleton<APIManager>
         string url = $"{apiUrl}/apps/{appId}/students"; 
         Debug.Log(json);
         Debug.Log($"Send student to:\n {url}");
-        Debug.Log("Header: token " + header[1].Value);
+        Debug.Log("Header: token " + this.header[1].Value);
 
         if (!checkUrl(url))
         {

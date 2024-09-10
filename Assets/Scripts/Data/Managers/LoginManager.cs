@@ -1,4 +1,5 @@
 using RestClient.Core.Singletons;
+using UnityEngine;
 
 public class LoginManager : Singleton<LoginManager>
 {
@@ -7,7 +8,7 @@ public class LoginManager : Singleton<LoginManager>
 
     //API Settings
     public static bool online = true;
-    public Student actualStudent = null;
+    public Student actualStudent;
 
     void Awake()
     {
@@ -15,6 +16,12 @@ public class LoginManager : Singleton<LoginManager>
         {
             DontDestroyOnLoad(gameObject);
             isCreated = true;
+            if(!SaveSystem.Check())
+            {
+                return;
+            }
+
+        actualStudent = SaveSystem.Load();
         }
         else
         {
@@ -24,12 +31,7 @@ public class LoginManager : Singleton<LoginManager>
 
     void Start()
     {
-        if(!SaveSystem.Check())
-        {
-            return;
-        }
-
-        actualStudent = SaveSystem.Load();
+        
     }
     public void CreateStudentProfile(int age, string name)
     {
@@ -39,6 +41,7 @@ public class LoginManager : Singleton<LoginManager>
     public void SaveStudentProfile(int id, int age, string name)
     {
         actualStudent = SaveSystem.Create(id, age, name);
+        Debug.Log("Profile Created");
         SceneManager.Instance.LoadScene("MainMenu");
     }
 
