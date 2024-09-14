@@ -21,6 +21,8 @@ public class APIManager : Singleton<APIManager>
     private const string appId = "BOTIQI";
     private const string token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyNTUwNDc4MywianRpIjoiNDZmNzEyMGEtZmZmYi00ZDkzLWFhMjktYTM2OWYxMzQ4ZDg2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IkJPVElRSSIsIm5iZiI6MTcyNTUwNDc4MywiY3NyZiI6ImFhY2Q0M2IzLTdkMTAtNDgwMC1iNDQyLTA4YzYzODAyZGMwMCJ9.Sdfxn_qIAU42sO5k58nPfINxhkuset6vVeiQPOGU_A8";
     private List<RequestHeader> header;
+
+    private bool isOnline = false;
       
     void Awake()
     {
@@ -44,7 +46,7 @@ public class APIManager : Singleton<APIManager>
     }
     void Start()
     {
-        
+    //   
     }
     
     // Aula no implementada en la api
@@ -81,6 +83,12 @@ public class APIManager : Singleton<APIManager>
 
     public void CreateStudentProfile(int age, string name)
     {
+        if (!isOnline)
+        {
+            LoginManager.Instance.SaveStudentProfile(-1, age, name);
+            return;
+        }
+
         Debug.Log("Creating Student Profile");
 
         var json = JsonConvert.SerializeObject(new {age = age, name = name});
@@ -127,6 +135,11 @@ public class APIManager : Singleton<APIManager>
 
     public void SendScores(string chapterId, List<Score> scores)
     {
+        if (!isOnline)
+        {
+            return;
+        }
+
         Student student = LoginManager.Instance.actualStudent;
         var json = JsonConvert.SerializeObject(
             new {

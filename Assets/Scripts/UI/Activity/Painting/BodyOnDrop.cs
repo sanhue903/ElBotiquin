@@ -22,7 +22,7 @@ public class BodyOnDrop : EventTrigger
         Debug.Log($"Painting: {gameObject.name}");
 
         QuestionData actualQuestion = ActivityManager.Instance.GetActualQuestionData();
-        actualQuestion.gameObject.GetComponent<QuestionUI>().correctAnswerAudio = GetComponent<EmotionsAudios>().GetAudio(0);
+        actualQuestion.gameObject.GetComponent<QuestionUI>().correctAnswerAudio = GetAudio(actualQuestion.id);
         
         AlternativeData alternative = GetComponent<AlternativeData>();                
 
@@ -37,5 +37,33 @@ public class BodyOnDrop : EventTrigger
         alternative.answer = answer;
 
         ActivityManager.Instance.Answer(alternative);
+    }
+
+    private AudioSource GetAudio(string id)
+    {
+        AudioSource audio;
+        
+        switch (id)
+        {
+            case "AUTE21":
+                audio = GetComponent<EmotionsAudios>().GetAudio(0);
+                break;
+            case "AUTE22":
+                audio = GetComponent<EmotionsAudios>().GetAudio(1);
+                break;
+            case "AUTE23":
+                audio = GetComponent<EmotionsAudios>().GetAudio(2);
+                break;
+            case "AUTE24":
+                audio = GetComponent<EmotionsAudios>().GetAudio(3);
+                break;
+            default:
+                audio = null;
+                break;
+        }
+
+        return audio;     
+
+
     }
 }

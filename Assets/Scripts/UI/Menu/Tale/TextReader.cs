@@ -30,10 +30,7 @@ public class TextReader : MonoBehaviour
 
     IEnumerator Delay()
     {
-        if (indexParagraph == 0)
-        {
-            yield return new WaitForSeconds(titleDelay);
-        }
+        yield return new WaitForSeconds(titleDelay);
 
         StartCoroutine(ReadText());
     }    
