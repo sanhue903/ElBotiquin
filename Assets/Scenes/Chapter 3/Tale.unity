@@ -7806,7 +7806,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Donde escondo mis colores
+  m_text: DONDE ESCONDO MIS COLORES
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 929960aab0b35c729ba860d205a0ea7b, type: 2}
   m_sharedMaterial: {fileID: 6878411310095849691, guid: 929960aab0b35c729ba860d205a0ea7b, type: 2}

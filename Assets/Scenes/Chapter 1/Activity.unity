@@ -13929,7 +13929,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1551680725
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16560,11 +16560,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d696a20e06b7a9458f3eb0aa16726ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questionsParent: {fileID: 0}
-  nextButton: {fileID: 0}
-  nextScene: 
-  offsetTime: 0.5
-  chapterId: 
+  introduction: {fileID: 0}
+  instructions: {fileID: 0}
+  questions: []
 --- !u!4 &1861361294
 Transform:
   m_ObjectHideFlags: 0

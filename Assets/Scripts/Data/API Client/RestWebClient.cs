@@ -16,7 +16,7 @@ namespace RestClient.Core
             {
                 yield return webRequest.SendWebRequest();
                 
-                if(webRequest.result == UnityWebRequest.Result.ConnectionError){
+                if(webRequest.isNetworkError){
                     callback(new Response {
                         StatusCode = webRequest.responseCode,
                         Error = webRequest.error,
@@ -42,13 +42,13 @@ namespace RestClient.Core
             {
                 yield return webRequest.SendWebRequest();
 
-                if(webRequest.result == UnityWebRequest.Result.ConnectionError){
+                if(webRequest.isNetworkError){
                     callback(new Response {
                         StatusCode = webRequest.responseCode,
                         Error = webRequest.error
                     });
                 }
-
+                
                 if(webRequest.isDone)
                 {
                     callback(new Response {
@@ -75,7 +75,7 @@ namespace RestClient.Core
 
                 yield return webRequest.SendWebRequest();
 
-                if(webRequest.result == UnityWebRequest.Result.ConnectionError)
+                if(webRequest.isNetworkError)
                 {
                     callback(new Response {
                         StatusCode = webRequest.responseCode,
@@ -112,7 +112,7 @@ namespace RestClient.Core
 
                 yield return webRequest.SendWebRequest();
 
-                if(webRequest.result == UnityWebRequest.Result.ConnectionError)
+                if(webRequest.isNetworkError)
                 {
                     callback(new Response {
                         StatusCode = webRequest.responseCode,
@@ -135,7 +135,7 @@ namespace RestClient.Core
             {
                 yield return webRequest.SendWebRequest();
                 
-                if(webRequest.result == UnityWebRequest.Result.ConnectionError){
+                if(webRequest.isNetworkError){
                     callback(new Response {
                         StatusCode = webRequest.responseCode,
                         Error = webRequest.error,

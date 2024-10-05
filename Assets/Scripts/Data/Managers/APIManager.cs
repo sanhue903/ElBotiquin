@@ -46,7 +46,6 @@ public class APIManager : Singleton<APIManager>
     }
     void Start()
     {
-    //   
     }
     
     // Aula no implementada en la api

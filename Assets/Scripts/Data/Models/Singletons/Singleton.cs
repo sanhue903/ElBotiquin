@@ -6,8 +6,6 @@ namespace RestClient.Core.Singletons
         where T : Component
     {
         private static T _instance;
-        private static bool isCreated;
-
         public static T Instance
         {
             get
@@ -23,7 +21,7 @@ namespace RestClient.Core.Singletons
                     }
                     if (_instance == null)
                     {
-                        UnityEngine.GameObject obj = new UnityEngine.GameObject();
+                        GameObject obj = new GameObject();
                         obj.name = string.Format("_{0}", typeof(T).Name);
                         _instance = obj.AddComponent<T>();
                     }
