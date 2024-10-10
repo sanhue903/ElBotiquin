@@ -19,6 +19,7 @@ public class ActivityManager : Singleton<ActivityManager>
     {
         questionIndex = -1;
         hasCalled = false;
+        isStarted = false;
     }
 
     void Update()

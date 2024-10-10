@@ -22,7 +22,10 @@ EditorBuildSettings:
     guid: 52664c48d8291a746b5e741d0b327f5d
   - enabled: 1
     path: Assets/Scenes/Chapter 2/Tale.unity
-    guid: 5397bf5a62d999eb8b2650f1b5eafb13
+    guid: 6c2227d0084f4ba40a7f0eade01114a8
+  - enabled: 1
+    path: Assets/Scenes/Chapter 2/Interlude.unity
+    guid: 86442a49e3cc1d94aaafe1f9cd3ef742
   - enabled: 1
     path: Assets/Scenes/Chapter 3/Tale.unity
     guid: 6e98dbed03f75d84f9ceac6ed8d05a47
