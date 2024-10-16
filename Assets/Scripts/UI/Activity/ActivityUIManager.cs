@@ -176,7 +176,7 @@ public class ActivityUIManager : Singleton<ActivityUIManager>
         
         UnityEngine.SceneManagement.SceneManager.LoadScene(nextScene);
     }
-    public void Answer(bool isCorrect)
+    public void Answer(bool isCorrect, int number)
     {
         if (isCorrect)
         {
@@ -195,7 +195,18 @@ public class ActivityUIManager : Singleton<ActivityUIManager>
         else
         {
             Debug.Log("Incorrect answer");
-            AudioManager.Instance.PlayAudio(actualQuestion.GetComponent<QuestionUI>().incorrectAnswerAudio);
+
+            AudioSource audio = actualQuestion.GetComponent<QuestionUI>().incorrectAnswerAudio;
+
+            if (audio != null)
+            {
+                AudioManager.Instance.PlayAudio(audio);
+            }
+            else
+            {
+                audio = actualQuestion.GetComponent<QuestionData>().alternatives[number - 1].gameObject.GetComponent<AlternativeUI>().incorrectAnwswer;
+                AudioManager.Instance.PlayAudio(audio);
+            }
         }   
     }
 }

@@ -6,6 +6,7 @@ public class AlternativeUI : MonoBehaviour
 
     [Header("Audio Elements")]
     [SerializeField] private AudioSource answerAudio;
+    [SerializeField] public AudioSource incorrectAnwswer;
     public float GetAudioLength()
     {
         return answerAudio.clip.length;

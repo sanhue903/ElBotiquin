@@ -33,7 +33,7 @@ public class ActivityManager : Singleton<ActivityManager>
     public void Answer(AlternativeData answer)
     {
         ActivityDataManager.Instance.Answer(questions[questionIndex].GetComponent<QuestionData>().id, answer);
-        ActivityUIManager.Instance.Answer(answer.isCorrect);
+        ActivityUIManager.Instance.Answer(answer.isCorrect, answer.number);
     }
 
     public void NextQuestion()
