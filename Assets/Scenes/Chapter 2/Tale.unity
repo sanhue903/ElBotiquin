@@ -1462,7 +1462,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &305790610
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6314,7 +6314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paragraphParent: {fileID: 581694049}
   AudioParent: {fileID: 1313879541}
-  nextScene: Scenes/Chapter 2/Breath
+  nextScene: Scenes/Chapter 2/Interlude
 --- !u!4 &1957067879
 Transform:
   m_ObjectHideFlags: 0

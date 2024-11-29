@@ -27,6 +27,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Chapter 2/Interlude.unity
     guid: 86442a49e3cc1d94aaafe1f9cd3ef742
   - enabled: 1
+    path: Assets/Scenes/Chapter 2/Activity.unity
+    guid: 4f58eba904a51194aa1eb1c2733d1463
+  - enabled: 1
+    path: Assets/Scenes/Chapter 2/Congratulations.unity
+    guid: c975e4cb614b2894db6f741c74ccde98
+  - enabled: 1
     path: Assets/Scenes/Chapter 3/Tale.unity
     guid: 6e98dbed03f75d84f9ceac6ed8d05a47
   - enabled: 1

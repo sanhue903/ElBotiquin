@@ -13,7 +13,10 @@ public class ParagraphManager : MonoBehaviour
         index = 0;
         totalParagraphs = paragraphParent.transform.childCount;
 
-        AudioManager.Instance.PlayAudio(AudioParent.transform.GetChild(index).GetComponent<AudioSource>());
+        if (AudioParent != null)
+        {
+            AudioManager.Instance.PlayAudio(AudioParent.transform.GetChild(index).GetComponent<AudioSource>());
+        }
     }
 
     public void ShowPreviousParagraph()
@@ -26,7 +29,11 @@ public class ParagraphManager : MonoBehaviour
         paragraphParent.transform.GetChild(index).gameObject.SetActive(false);
         index--;
         paragraphParent.transform.GetChild(index).gameObject.SetActive(true);
-        AudioManager.Instance.PlayAudio(AudioParent.transform.GetChild(index).GetComponent<AudioSource>());
+        
+        if (AudioParent != null)
+        {
+            AudioManager.Instance.PlayAudio(AudioParent.transform.GetChild(index).GetComponent<AudioSource>());
+        }
         
     }
 
@@ -41,6 +48,9 @@ public class ParagraphManager : MonoBehaviour
         paragraphParent.transform.GetChild(index).gameObject.SetActive(false);
         index++;
         paragraphParent.transform.GetChild(index).gameObject.SetActive(true);
-        AudioManager.Instance.PlayAudio(AudioParent.transform.GetChild(index).GetComponent<AudioSource>());
+        if (AudioParent != null)
+        {
+            AudioManager.Instance.PlayAudio(AudioParent.transform.GetChild(index).GetComponent<AudioSource>());
+        }
     }
 }

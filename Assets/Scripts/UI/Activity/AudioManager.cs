@@ -8,7 +8,11 @@ public class AudioManager : Singleton<AudioManager>
 
     void Awake()
     {
-        backgroundAudio.Play();
+        if (backgroundAudio != null)
+        {
+            backgroundAudio.Play();
+        }
+        
         actualAudio = null;
     }
 
